@@ -1,24 +1,35 @@
-# README
+# Bon appetiteの概要
+レシピを共有して作りたいレシピを見つけたらすぐに買い物リストを作成できる。スーパーで複数のレシピのページの材料欄を見ながら買い物したり、作りたいレシピのメモを紙に書いてから買い物に出かけなくても、レシピを見ているときに同時に買い物リストを作成できる。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+--__URL__--  
+デプロイ未
 
-Things you may want to cover:
+--__テスト用アカウント__--  
+|||
+| -- | -- |
+|  Basic認証パスワード  |  yuki  |
+|  Basic認証ID  |  8634  |
+|  メールアドレス  |  yuki@yuki.com  |
+|  パスワード  |  yuki123  |
+  
+# 利用方法
+①レシピ投稿  
+・トップページのヘッダーから新規登録  
+・レシピ作成ボタンからレシピを投稿する  
+・レシピを一覧画面から確認する  
+②買い物リストを作成する  
+・レシピ詳細ページから買い物リストに追加ボタンを押す  
+・ヘッダーのマイページから買い物リストを確認する  
 
-* Ruby version
+# アプリケーションを作成した背景
+普段から料理をするのが好きで、レシピサイトをよく利用していましたが、実際に買い物をするときはいろんなレシピを見ながら買い物をしていて、買い忘れたり余分に買ってしまったりしたことがありました。その時、レシピを見ながら同時に買い物リストを作成してくれるアプリがあったらいいなと思いました。周りの人にも聞いてみると同じ課題を抱えている人がいて、他にも同じ課題を抱えている人がいると推測し開発することにしました。
+# 工夫した点
+hoge
 
-* System dependencies
+# 要件定義
 
-* Configuration
+# データベース設計
 
-* Database creation
+# 画面遷移図
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 開発環境
