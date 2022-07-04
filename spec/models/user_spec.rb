@@ -1,5 +1,53 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'ユーザーの新規登録' do
+    before do
+      @user = FactoryBot.build(:user)
+    end
+
+    context '新規登録がうまくいくとき' do
+      it '全ての値が正しく入力されていれば登録できる' do
+        expect(@user).to be_valid
+      end
+    end
+
+    context '新規登録がうまくいかないとき' do
+      it 'nameが空だと登録できない' do
+        @user.name = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Name can't be blank")
+      end
+
+      it 'emailが空だと登録できない' do
+        @user.email = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Email can't be blank")
+      end
+
+      it 'emailの値が正しくないと登録できない' do
+        @user.email = 'aaaaaa'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Email is invalid')
+      end
+
+      it 'passwordが空だと登録できない' do
+        @user.password = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password can't be blank")
+      end
+
+      it 'passwordが5文字以下だと登録できない' do
+        @user.password = '00000'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
+      end
+
+      it 'passwordが存在してもpassword_confirmationが空では登録できない' do
+        @user.password_confirmation = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+      end
+    end
+  end
 end
