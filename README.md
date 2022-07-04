@@ -1,4 +1,4 @@
-# Bon appetiteの概要
+# Recipe_appの概要
 レシピを共有して作りたいレシピを見つけたらすぐに買い物リストを作成できる。スーパーで複数のレシピのページの材料欄を見ながら買い物したり、作りたいレシピのメモを紙に書いてから買い物に出かけなくても、レシピを見ているときに同時に買い物リストを作成できる。
 
 --__URL__--  
@@ -27,9 +27,10 @@
 hoge
 
 # 要件定義
-
+[こちらから](https://docs.google.com/spreadsheets/d/1KwSYimefFXwW4nBFSt5P2nJGMS_fz_1ft9eJh8wT1D0/edit#gid=982722306)
 # データベース設計
-
+![](https://i.gyazo.com/7d88178806ca07b99ee1027ee7a4e11d.png)
+# テーブル設計
 ## users テーブル
 
 | Column             | Type   | Options                   |
@@ -47,6 +48,7 @@ hoge
 - has_many :follower
 - has_many :followed
 - has_many :favorites
+- has_one :prrofile
 
 
 
@@ -148,18 +150,30 @@ hoge
 - belongs_to :user
 - belongs_to :recipe
 
+
+## profiles テーブル
+
+| Column       | Type | Options |
+| ------------ | ---- | ------- |
+| introduction | text |         |
+
+### Association
+
+- belongs_to user
+
 # 画面遷移図
+![](https://i.gyazo.com/a9f963cd02c9edaef649c86cdc40f928.jpg)
 
 # 開発環境
-・フロントエンド
+- フロントエンド  
 HTML,CSS,JavaScript
-・バックエンド
+- バックエンド  
 Ruby
-・インフラ
+- インフラ  
 EC2,S3,
-・テスト
+- テスト  
 rspec
-・テキストエディタ
+- テキストエディタ  
 VSCode
-・タスク管理
+- タスク管理  
 Github
