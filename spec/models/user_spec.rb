@@ -31,6 +31,14 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include('Email is invalid')
       end
 
+      it 'emailがすでに存在していると登録できない' do
+        @user.save
+        another_user = FactoryBot.build(:user)
+        another_user.email = @user.email
+        another_user.valid?
+        expect(another_user.errors.full_messages).to include('Email has already been taken')
+      end
+
       it 'passwordが空だと登録できない' do
         @user.password = ''
         @user.valid?
@@ -41,6 +49,12 @@ RSpec.describe User, type: :model do
         @user.password = '00000'
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
+      end
+
+      it 'passwordが129文字以上だと登録できない' do
+        @user.password = 'a' * 129
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password is too long (maximum is 128 characters)')
       end
 
       it 'passwordが存在してもpassword_confirmationが空では登録できない' do
