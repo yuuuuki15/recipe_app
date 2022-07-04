@@ -30,6 +30,124 @@ hoge
 
 # データベース設計
 
+## users テーブル
+
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| name               | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+
+### Association
+
+- has_many :recipes
+- has_many :comments
+- has_many :menus
+- has_one  :list
+- has_many :follower
+- has_many :followed
+- has_many :favorites
+
+
+
+## recipes テーブル
+
+| Column    | Type       | Options                        |
+| -------   | ---------- | ------------------------------ |
+| title     | string     | null: false                    |
+| amount    | integer    | null: false                    |
+| method    | text       | null: false                    |
+| tip       | text       |                                |
+| public_id | ineger     | null: false                    |
+| user      | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- has_many :comments
+- has_many :ingredients
+- has_many :recipe_menus
+- has_many :favorites  
+*public_idでレシピを一般公開するか自分にしか表示されないかを選択できる。
+
+
+
+## ingredients テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| name   | string     | null: false                    |
+| recipe | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :recipe
+
+
+## comments テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | string     | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| recipe  | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :recipe
+
+## recipe_menusテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| recipe | references | null: false, foreign_key: true |
+| menu   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :recipe
+- belongs_to :menus
+
+
+## menusテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| date   | date       | null: false                    |
+| recipe | references | null: false, foreign_key: true |
+| user   | references | null: false, foreign_key: true |
+
+### Association
+
+- has_many :recipe_manus
+- belongs_to :user
+
+## relationshipsテーブル
+
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| follower | references | null: false, foreign_key: true |
+| followed | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :follower
+- belongs_to :followed
+
+
+## favoritesテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| recipe | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :recipe
+
 # 画面遷移図
 
 # 開発環境
