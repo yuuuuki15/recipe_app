@@ -159,7 +159,7 @@ hoge
 
 ### Association
 
-- belongs_to user
+- belongs_to :user
 
 # 画面遷移図
 ![](https://i.gyazo.com/a9f963cd02c9edaef649c86cdc40f928.jpg)
