@@ -21,7 +21,7 @@ hoge
 # 要件定義
 [こちらから](https://docs.google.com/spreadsheets/d/1KwSYimefFXwW4nBFSt5P2nJGMS_fz_1ft9eJh8wT1D0/edit#gid=982722306)
 # データベース設計
-![](https://i.gyazo.com/d2af1ac3c6704e1c8bc48b62c0dd8130.png)
+![](https://i.gyazo.com/43b3d2b71e476674accd493319933586.png)
 # テーブル設計
 ## users テーブル
 
