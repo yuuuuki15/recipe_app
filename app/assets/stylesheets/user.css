@@ -81,9 +81,16 @@
 /*=============================
 ログイン画面
 ==============================*/
+.login{
+  margin-bottom: 30px;
+}
 
-
-
+.login-flash-message{
+  color: red;
+  font-size: 15px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
 
 
 
@@ -93,7 +100,7 @@
 .error-message{
   color: red;
   font-size: 12px;
-  margin-top: 5px;
+  margin-top: 3px;
   list-style: none;
-  font-weight: 300;
+  font-weight: 600;
 }

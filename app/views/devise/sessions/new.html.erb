@@ -15,12 +15,15 @@
       </div>
       <div class ="card-body">
         <%= form_with model: @user, url: user_session_path, mehod: :post, class: 'registration-main', local: true do |f| %>
-        <%= render 'devise/shared/error_messages', model: f.object %>
-          <div class ="form-main">
+        <div class='login-flash-message'>
+          <%= flash[:notice] %>
+          <%= flash[:alert] %>
+        </div>
+          <div class ="form-main login">
             <%= f.label :email %><br \>
             <%= f.email_field :email, class: "form-control" %>
           </div><!--form-main-->
-          <div class ="form-main">
+          <div class ="form-main login">
             <%= f.label :password %><br \>
             <%= f.password_field :password, class: "form-control" %>
           </div><!--form-main-->
