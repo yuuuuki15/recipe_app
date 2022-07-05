@@ -44,12 +44,12 @@
         <%= flash[:alert] %>
       </div>
       <div class="field form_floating">
-        <%= f.label :email %><br />
+        <%= f.label :メールアドレス %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
 
       <div class="field form_floating">
-        <%= f.label :password %><br />
+        <%= f.label :パスワード %><br />
         <%= f.password_field :password, autocomplete: "current-password" %>
       </div>
 
@@ -61,7 +61,7 @@
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Log in" %>
+        <%= f.submit "Log in", class: "w-100 btn btn-lg btn-primary" %>
       </div>
     <% end %>
 
