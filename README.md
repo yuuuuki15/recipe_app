@@ -3,14 +3,6 @@
 
 --__URL__--  
 35.74.89.131
-
---__テスト用アカウント__--  
-|||
-| -- | -- |
-|  Basic認証パスワード  |  yuki  |
-|  Basic認証ID  |  8634  |
-|  メールアドレス  |  yuki@yuki.com  |
-|  パスワード  |  yuki123  |
   
 # 利用方法
 ①レシピ投稿  
@@ -29,7 +21,7 @@ hoge
 # 要件定義
 [こちらから](https://docs.google.com/spreadsheets/d/1KwSYimefFXwW4nBFSt5P2nJGMS_fz_1ft9eJh8wT1D0/edit#gid=982722306)
 # データベース設計
-![](https://i.gyazo.com/7d88178806ca07b99ee1027ee7a4e11d.png)
+![](https://i.gyazo.com/43b3d2b71e476674accd493319933586.png)
 # テーブル設計
 ## users テーブル
 
@@ -68,7 +60,7 @@ hoge
 - belongs_to :user
 - has_many :comments
 - has_many :ingredients
-- has_many :recipe_menus
+- has_many :menus
 - has_many :favorites  
 *public_idでレシピを一般公開するか自分にしか表示されないかを選択できる。
 
@@ -99,18 +91,6 @@ hoge
 - belongs_to :user
 - belongs_to :recipe
 
-## recipe_menusテーブル
-
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| recipe | references | null: false, foreign_key: true |
-| menu   | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :recipe
-- belongs_to :menus
-
 
 ## menusテーブル
 
@@ -122,7 +102,7 @@ hoge
 
 ### Association
 
-- has_many :recipe_manus
+- belongs_to :recipe
 - belongs_to :user
 
 ## relationshipsテーブル
@@ -162,7 +142,7 @@ hoge
 - belongs_to :user
 
 # 画面遷移図
-![](https://i.gyazo.com/a9f963cd02c9edaef649c86cdc40f928.jpg)
+![](https://i.gyazo.com/2d411bf5b2f57855d10718d2c9f2ccd2.png)
 
 # 開発環境
 - フロントエンド  
