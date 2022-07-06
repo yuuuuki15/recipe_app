@@ -1,5 +1,6 @@
 class Recipe < ApplicationRecord
   belongs_to :user
+  has_one_attachment :image
 
   with_options presence: true do
     validates :title, length: { maximum: 40 }
