@@ -1,0 +1,31 @@
+<!--フォームからレシピを投稿するプログラム-->
+<%= form_with model: @recipe, url: new_recipe_path, local: true do |f|%>
+  <div class ="form-main">
+    <%= f.label :title %><br \>
+    <%= f.text_field :title, class: "form-control" %>
+  </div><!--form-main-->
+  <div class ="form-main">
+    <%= f.label :amount %><br \>
+    <%= f.text_field :amount, class: "form-control" %>
+  </div><!--form-main-->
+  <div class ="form-main">
+    <%= f.label :title %><br \>
+    <%= f.text_field :title, class: "form-control" %>
+  </div><!--form-main-->
+  <div class ="form-main">
+    <%= f.label :method %><br \>
+    <%= f.text_field :method, class: "form-control" %>
+  </div><!--form-main-->
+  <div class ="form-main">
+    <%= f.label :tip %><br \>
+    <%= f.text_field :tip, class: "form-control" %>
+  </div><!--form-main-->
+  <div class ="form-main">
+    <%= f.label :public_id %><br \>
+    <%= f.text_field :public_id, class: "form-control" %>
+  </div><!--form-main-->
+  <div class ="form-main">
+    <div class ="form-submit">
+    <%= f.submit "投稿",class: "btn btn-primary" %>
+    </div>
+<% end %>
