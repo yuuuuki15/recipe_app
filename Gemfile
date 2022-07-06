@@ -68,3 +68,7 @@ end
 
 gem 'devise'
 gem 'rails-i18n'
+gem 'pry-rails'
+gem "aws-sdk-s3", require: false
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'

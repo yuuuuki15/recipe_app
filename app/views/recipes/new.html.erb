@@ -1,0 +1,41 @@
+<!--ヘッダー-->
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Recipe_app</a>
+    <%= link_to '新規登録', new_user_registration_path%>
+    <%= link_to 'ログイン', new_user_session_path%>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+  </div>
+</nav>
+<!--入力フォーム-->
+<%= form_with model: @recipe, local: true do |f|%>
+  <%= render 'devise/shared/error_messages', model: f.object %>
+  <div class ="form-main">
+    <%= f.label :タイトル %><br \>
+    <%= f.text_field :title, class: "form-control" %>
+  </div><!--form-main-->
+  <div class="img-upload">
+    <%= f.label :画像 %><br \>
+    <%= f.file_field :image, id:"item-image" %>
+  </div>
+  <div class ="form-main">
+    <%= f.label :何人分 %><br \>
+    <%= f.text_field :amount, class: "form-control" %>
+  </div><!--form-main-->
+  <div class ="form-main">
+    <%= f.label :作り方 %><br \>
+    <%= f.text_field :method, class: "form-control" %>
+  </div><!--form-main-->
+  <div class ="form-main">
+    <%= f.label :コツ %><br \>
+    <%= f.text_field :tip, class: "form-control" %>
+  </div><!--form-main-->
+  <div class ="form-switch">
+    <%= f.label :一般公開 %><br \>
+    <%= f.check_box :public_id, class: "form-check-input", checked: false %>
+  </div><!--form-switch-->
+  <div class ="form-main">
+    <div class ="form-submit">
+    <%= f.submit "投稿",class: "btn btn-primary" %>
+    </div>
+<% end %>
