@@ -14,6 +14,10 @@
     <%= f.label :タイトル %><br \>
     <%= f.text_field :title, class: "form-control" %>
   </div><!--form-main-->
+  <div class="img-upload">
+    <%= f.label :画像 %><br \>
+    <%= f.file_field :image, id:"item-image" %>
+  </div>
   <div class ="form-main">
     <%= f.label :何人分 %><br \>
     <%= f.text_field :amount, class: "form-control" %>
