@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="iyS-_dz1zEILZsvo_pwi" name="ページ1">
-        <mxGraphModel dx="1119" dy="635" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="687" dy="426" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -150,7 +150,7 @@
                         <mxRectangle width="30" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="186" value="user" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="184" vertex="1">
+                <mxCell id="186" value="user_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="184" vertex="1">
                     <mxGeometry x="30" width="90" height="30" as="geometry">
                         <mxRectangle width="90" height="30" as="alternateBounds"/>
                     </mxGeometry>
@@ -194,7 +194,7 @@
                         <mxRectangle width="30" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="46" value="recipe" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="44" vertex="1">
+                <mxCell id="46" value="recipe_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="44" vertex="1">
                     <mxGeometry x="30" width="100" height="30" as="geometry">
                         <mxRectangle width="100" height="30" as="alternateBounds"/>
                     </mxGeometry>
@@ -238,7 +238,7 @@
                         <mxRectangle width="30" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="59" value="user" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="57" vertex="1">
+                <mxCell id="59" value="user_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="57" vertex="1">
                     <mxGeometry x="30" width="90" height="30" as="geometry">
                         <mxRectangle width="90" height="30" as="alternateBounds"/>
                     </mxGeometry>
@@ -251,7 +251,7 @@
                         <mxRectangle width="30" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="62" value="recipe" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="60" vertex="1">
+                <mxCell id="62" value="recipe_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="60" vertex="1">
                     <mxGeometry x="30" width="90" height="30" as="geometry">
                         <mxRectangle width="90" height="30" as="alternateBounds"/>
                     </mxGeometry>
@@ -280,7 +280,7 @@
                         <mxRectangle width="30" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="72" value="user" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="70" vertex="1">
+                <mxCell id="72" value="user_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="70" vertex="1">
                     <mxGeometry x="30" width="90" height="30" as="geometry">
                         <mxRectangle width="90" height="30" as="alternateBounds"/>
                     </mxGeometry>
@@ -293,7 +293,7 @@
                         <mxRectangle width="30" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="75" value="recipe" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="73" vertex="1">
+                <mxCell id="75" value="recipe_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="73" vertex="1">
                     <mxGeometry x="30" width="90" height="30" as="geometry">
                         <mxRectangle width="90" height="30" as="alternateBounds"/>
                     </mxGeometry>
@@ -335,7 +335,7 @@
                         <mxRectangle width="30" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="88" value="user" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="86" vertex="1">
+                <mxCell id="88" value="user_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="86" vertex="1">
                     <mxGeometry x="30" width="80" height="30" as="geometry">
                         <mxRectangle width="80" height="30" as="alternateBounds"/>
                     </mxGeometry>
@@ -348,7 +348,7 @@
                         <mxRectangle width="30" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="183" value="recipe" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="181" vertex="1">
+                <mxCell id="183" value="recipe_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="181" vertex="1">
                     <mxGeometry x="30" width="80" height="30" as="geometry">
                         <mxRectangle width="80" height="30" as="alternateBounds"/>
                     </mxGeometry>
@@ -403,7 +403,7 @@
                         <mxRectangle width="30" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="101" value="user" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="99" vertex="1">
+                <mxCell id="101" value="user_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="99" vertex="1">
                     <mxGeometry x="30" width="90" height="30" as="geometry">
                         <mxRectangle width="90" height="30" as="alternateBounds"/>
                     </mxGeometry>
@@ -467,7 +467,7 @@
                         <mxRectangle width="30" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="155" value="follower" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="153" vertex="1">
+                <mxCell id="155" value="follower_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="153" vertex="1">
                     <mxGeometry x="30" width="100" height="30" as="geometry">
                         <mxRectangle width="100" height="30" as="alternateBounds"/>
                     </mxGeometry>
@@ -480,7 +480,7 @@
                         <mxRectangle width="30" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="158" value="followed" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="156" vertex="1">
+                <mxCell id="158" value="followed_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="156" vertex="1">
                     <mxGeometry x="30" width="100" height="30" as="geometry">
                         <mxRectangle width="100" height="30" as="alternateBounds"/>
                     </mxGeometry>
