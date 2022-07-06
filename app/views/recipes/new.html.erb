@@ -8,7 +8,7 @@
   </div>
 </nav>
 <!--入力フォーム-->
-<%= form_with model: @recipe, local: true do |f|%>
+<%= form_with model: @recipe_ingredient, url: '/recipes', local: true do |f|%>
   <%= render 'devise/shared/error_messages', model: f.object %>
   <div class ="form-main">
     <%= f.label :タイトル %><br \>
@@ -21,6 +21,10 @@
   <div class ="form-main">
     <%= f.label :何人分 %><br \>
     <%= f.text_field :amount, class: "form-control" %>
+  </div><!--form-main-->
+   <div class ="form-main">
+    <%= f.label :材料 %><br \>
+    <%= f.text_field :name, class: "form-control" %>
   </div><!--form-main-->
   <div class ="form-main">
     <%= f.label :作り方 %><br \>
