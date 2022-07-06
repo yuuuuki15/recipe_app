@@ -68,10 +68,11 @@ hoge
 
 ## ingredients テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| name   | string     | null: false                    |
-| recipe | references | null: false, foreign_key: true |
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| name     | string     | null: false                    |
+| quantity | string     | null: false                    |
+| recipe   | references | null: false, foreign_key: true |
 
 ### Association
 
