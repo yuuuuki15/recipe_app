@@ -22,6 +22,14 @@
     <%= f.label :何人分 %><br \>
     <%= f.text_field :amount, class: "form-control" %>
   </div><!--form-main-->
+    <div id ="ingredients">
+      <%= f.fields_for :ingredients do |ingredient|%>
+      <%= render 'ingredient_fields', :f => ingredient%>
+      <% end %>
+      <div class ="links">
+        <%= link_to_add_association 'add_ingredient', f, :ingredients %>
+      </div>
+    </div> <!--ingredients-->
   <div class ="form-main">
     <%= f.label :作り方 %><br \>
     <%= f.text_field :method, class: "form-control" %>
