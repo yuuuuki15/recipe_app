@@ -1,5 +1,5 @@
 .recipe-index-container{
-  height: 100vh;
+  height: 2000px;
   width: 100vw;
   display: flex;
 }
@@ -19,7 +19,7 @@
 
 .recipe-box{
   display: flex;
-  height: 300px;
+  height: 200px;
   width: 100%;
 }
 
@@ -33,11 +33,12 @@
 .recipe-right{
   width: 50%;
   padding-top: 30px;
+  padding-right: 5px;
 }
 
 .recipe-image{
-  height: 250px;
-  width:250px;
+  height: 200px;
+  width:200px;
   object-fit: cover;
   border-radius: 30px;
   /* filter: brightness(130%);
@@ -53,5 +54,4 @@
   color: lightslategray;
   font-weight: 600;
   font-size: 30px;
-  margin-top: 30px;
 }

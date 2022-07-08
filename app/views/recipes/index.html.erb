@@ -24,14 +24,14 @@
         <% end %>
       </div>
       <div class ="recipe-right">
-        <div class ="recipe-title">
+        <div class ="recipe-title text-truncate">
           <%= link_to recipe.title, '#' %>
         </div>
-        <p>by <%= link_to recipe.user.name, "#" %></p>
-        <div class ="recipe-method">
+        <p>by <%= link_to recipe.user.name, "#", class: "text-truncate" %></p>
+        <div class ="recipe-method text-truncate">
           <span class ="bold">作り方：</span><%= recipe.method %>
         </div>
-        <div class ="recipe-ingredients">
+        <div class ="recipe-ingredients text-truncate">
           <span class ="bold">材料　：</span><%= recipe.ingredients.map { |ingredient| ingredient.name }.join(', ') %>
         </div>
       </div> <!--recipe-right-->
