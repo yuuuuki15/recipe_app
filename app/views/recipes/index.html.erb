@@ -1,10 +1,40 @@
 <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Recipe_app</a>
+    <a class="navbar-brand" href="/">Recipe_app</a>
     <%= link_to '新規登録', new_user_registration_path%>
     <%= link_to 'ログイン', new_user_session_path%>
     <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
   </div>
 </nav>
-<%= link_to 'レシピを投稿する', new_recipe_path%>
 
+<div class ="recipe-index-container">
+  <div class ="recipe-index-left">
+  <% if user_signed_in? %>
+<%= link_to 'レシピを投稿する', new_recipe_path%>
+<% end %>
+  </div>
+  <div class ="recipe-index-center">
+    <% @recipes.each do |recipe| %>
+    <div class ="recipe-box">
+      <div class ="recipe-left">
+        <%= image_tag recipe.image, class:"recipe-image"  %>
+      </div>
+      <div class ="recipe-right">
+        <%= link_to recipe.title, "#", class: "recipe-title" %>
+        <p>by <%= link_to recipe.user.name, "#" %></p>
+        <div class ="recipe-method">
+          <span class ="bold">作り方：</span><%= recipe.method %>
+        </div>
+        <div class ="recipe-tip">
+          <span class ="bold">コツ　：</span><%= recipe.tip %>
+        </div>
+        <div class ="recipe-ingredients">
+          <span class ="bold">材料　：</span><%= recipe.ingredients.map { |ingredient| ingredient.name }.join(', ') %>
+        </div>
+      </div> <!--recipe-right-->
+    </div> <!--recipe-box-->
+    <% end %>
+  </div>
+  <div class ="recipe-index-right">
+  </div>
+</div>
