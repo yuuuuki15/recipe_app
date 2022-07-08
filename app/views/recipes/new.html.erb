@@ -31,8 +31,14 @@
       </div>
     </div> <!--ingredients-->
   <div class ="form-main">
-    <%= f.label :作り方 %><br \>
-    <%= f.text_field :method, class: "form-control" %>
+    <div id="descriptions">
+      <%= f.fields_for :descriptions do |description|%>
+      <%= render 'description_fields', :f => description%>
+      <% end %>
+      <div class ="links">
+        <%= link_to_add_association 'add_description', f, :descriptions %>
+      </div>
+    </div> <!--descriptions-->
   </div><!--form-main-->
   <div class ="form-main">
     <%= f.label :コツ %><br \>

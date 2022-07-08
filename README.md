@@ -62,6 +62,7 @@ hoge
 - has_many :ingredients
 - has_many :menus
 - has_many :favorites  
+- has_many :descriptions
 *public_idでレシピを一般公開するか自分にしか表示されないかを選択できる。
 
 
@@ -72,6 +73,17 @@ hoge
 | -------- | ---------- | ------------------------------ |
 | name     | string     | null: false                    |
 | quantity | string     | null: false                    |
+| recipe   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :recipe
+
+## descriptions テーブル
+
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| text     | string     | null: false                    |
 | recipe   | references | null: false, foreign_key: true |
 
 ### Association
