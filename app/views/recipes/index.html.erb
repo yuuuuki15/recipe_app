@@ -16,16 +16,16 @@
   <div class ="recipe-index-center">
     <% @recipes.each do |recipe| %>
     <div class ="recipe-box">
-      <div class ="recipe-left">
+      <div class ="recipe-box-left">
         <% if recipe.image.attached? %>
         <%= image_tag recipe.image, class:"recipe-image" %>
         <% else %>
           <%= image_tag 'test_image.png', class:"recipe-image" %>
         <% end %>
-      </div>
-      <div class ="recipe-right">
+      </div><!--recipe-box-left-->
+      <div class ="recipe-box-right">
         <div class ="recipe-title text-truncate">
-          <%= link_to recipe.title, '#' %>
+          <%= link_to recipe.title, recipe_path(recipe) %>
         </div>
         <p>by <%= link_to recipe.user.name, "#", class: "text-truncate" %></p>
         <div class ="recipe-method text-truncate">
@@ -34,7 +34,7 @@
         <div class ="recipe-ingredients text-truncate">
           <span class ="bold">材料　：</span><%= recipe.ingredients.map { |ingredient| ingredient.name }.join(', ') %>
         </div>
-      </div> <!--recipe-right-->
+      </div> <!--recipe-box-right-->
     </div> <!--recipe-box-->
     <% end %>
   </div>
