@@ -3,3 +3,14 @@ ja:
     attributes:
       user:
         name: 名前
+      recipe:
+        image: 画像
+        title: タイトル
+        amount: 何人分か
+        method: 作り方
+        tip: コツ
+        public_id: 公開キー
+        user: ユーザー
+      recipe/ingredients:
+        name: 材料名
+        quantity: 材料の分量
