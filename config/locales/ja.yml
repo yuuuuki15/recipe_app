@@ -6,10 +6,10 @@ ja:
       recipe:
         image: 画像
         title: タイトル
-        amount: 何人分か
+        amount: レシピの分量
         method: 作り方
         tip: コツ
-        public_id: 公開キー
+        public_id: 公開設定
         user: ユーザー
       recipe/ingredients:
         name: 材料名

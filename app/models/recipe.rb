@@ -9,7 +9,6 @@ class Recipe < ApplicationRecord
     validates :amount, numericality: { other_than: 0, allow_blank: true }
     validates :method, length: { maximum: 1000 }
     validates :public_id
-    validates :user_id, numericality: { other_than: 0 }
   end
   validates :tip, length: { maximum: 1000 }
 end
