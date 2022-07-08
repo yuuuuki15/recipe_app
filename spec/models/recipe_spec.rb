@@ -76,12 +76,6 @@ RSpec.describe Recipe, type: :model do
         expect(@recipe.errors.full_messages).to include("材料の分量を入力してください")
       end
 
-      it '材料の分量が0だと保存できないこと' do
-        @recipe.ingredients.build(name: 'test', quantity: 0)
-        @recipe.valid?
-        expect(@recipe.errors.full_messages).to include("材料の分量は0以外の値にしてください")
-      end
-
       it '材料の分量が入力されているのに材料名が空だと保存できないこと' do
         @recipe.ingredients.build(name: nil, quantity: 1)
         @recipe.valid?
