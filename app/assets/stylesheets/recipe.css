@@ -40,6 +40,9 @@
   width:250px;
   object-fit: cover;
   border-radius: 30px;
+  /* filter: brightness(130%);
+  filter: saturate(150%);
+  filter: opacity(90%); */
 }
 .bold{
   font-weight: 800;

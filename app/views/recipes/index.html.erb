@@ -17,16 +17,19 @@
     <% @recipes.each do |recipe| %>
     <div class ="recipe-box">
       <div class ="recipe-left">
-        <%= image_tag recipe.image, class:"recipe-image"  %>
+        <% if recipe.image.attached? %>
+        <%= image_tag recipe.image, class:"recipe-image" %>
+        <% else %>
+          <%= image_tag 'test_image.png', class:"recipe-image" %>
+        <% end %>
       </div>
       <div class ="recipe-right">
-        <%= link_to recipe.title, "#", class: "recipe-title" %>
+        <div class ="recipe-title">
+          <%= link_to recipe.title, '#' %>
+        </div>
         <p>by <%= link_to recipe.user.name, "#" %></p>
         <div class ="recipe-method">
           <span class ="bold">作り方：</span><%= recipe.method %>
-        </div>
-        <div class ="recipe-tip">
-          <span class ="bold">コツ　：</span><%= recipe.tip %>
         </div>
         <div class ="recipe-ingredients">
           <span class ="bold">材料　：</span><%= recipe.ingredients.map { |ingredient| ingredient.name }.join(', ') %>

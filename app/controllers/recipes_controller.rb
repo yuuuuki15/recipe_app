@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all.order("created_at DESC").where(public_id: 1)
   end
 
   def new
