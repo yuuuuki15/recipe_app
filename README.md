@@ -79,6 +79,17 @@ hoge
 
 - belongs_to :recipe
 
+## descriptions テーブル
+
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| text     | string     | null: false                    |
+| recipe   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :recipe
+
 
 ## descriptions テーブル
 
