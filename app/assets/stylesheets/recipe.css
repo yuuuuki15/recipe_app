@@ -1,3 +1,6 @@
+/*-----------------------------------------------------------------
+レシピ一覧画面
+------------------------------------------------------------------*/
 .recipe-index-container{
   height: 2000px;
   width: 100vw;
@@ -23,14 +26,14 @@
   width: 100%;
 }
 
-.recipe-left{
+.recipe-box-left{
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.recipe-right{
+.recipe-box-right{
   width: 50%;
   padding-top: 30px;
   padding-right: 5px;
@@ -51,7 +54,58 @@
 }
 .recipe-title{
   text-decoration: none;
-  color: lightslategray;
+  color: rgb(238, 121, 75);
   font-weight: 600;
   font-size: 30px;
+}
+
+/*-----------------------------------------------------------------
+レシピ詳細画面
+------------------------------------------------------------------*/
+.show-recipe-image{
+  height: 350px;
+  width:400px;
+  object-fit: cover;
+  border-radius: 40px;
+}
+/*-----------------------------------------------------------------
+レシピ詳細とレシピ編集で共有したい部分
+------------------------------------------------------------------*/
+.recipe-container{
+  height: 2000px;
+  width: 100vw;
+  display: flex;
+}
+
+.recipe-left{
+  width: calc(20vw/2);
+  background-color: lightyellow;
+}
+.recipe-center{
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-right{
+  width: calc(20vw/2);
+  background-color: lightyellow;
+}
+
+.recipe-top{
+  width: 100%;
+  padding: 30px 100px 10px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+}
+
+.recipe-middle{
+  width: 100%;
+  padding: 10px 100px;
+}
+
+.recipe-bottom{
+  width: 100%;
+  padding: 10px 50px;
 }

@@ -1,0 +1,46 @@
+<!--詳細画面を表示する-->
+<div class ="recipe-container"><!--大枠-->
+  <div class ="recipe-left"></div><!--左側の余白（メニューバーなど実装する予定）-->
+
+  <div class ="recipe-center"><!--レシピの詳細が表示されるメインのエリア-->
+    <div class ="recipe-top">
+      <div class ="recipe-top-left"><!--画像-->
+        <% if @recipe.image.attached? %>
+        <%= image_tag @recipe.image, class:"show-recipe-image" %>
+        <% else %>
+          <%= image_tag 'test_image.png', class:"recipe-image" %>
+        <% end %>
+      </div>
+      <div class ="recipe-top-right">
+        <div class ="recipe-title"><!--レシピのタイトル-->
+          <%= @recipe.title %>
+        </div>
+        <div class ="recipe-user"><!--レシピのユーザー-->
+          <%= @recipe.user.name %>
+        </div>
+        <div class ="recipe-ingredients"><!--レシピの材料-->
+        <!--材料と分量をグラフにして取り出す-->
+          <table class="table">
+            <thead>
+              <tr><th>材料名</th><th>分量</th></tr>
+            </thead>
+            <tbody>
+              <% @recipe.ingredients.each do |ingredient| %>
+                <tr><td><%= ingredient.name %></td><td><%= ingredient.quantity %></td></tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div><!--recipe-ingredient-->
+      </div><!--recipe-top-right-->
+    </div><!--recipe-top-->
+    <div class ="recipe-middle">
+      <div class ="recipe-method">
+        <span class ="bold">作り方：</span><%= @recipe.method %>
+      </div>
+    </div>
+    <div class ="recipe-bottom">
+    </div>
+  </div><!--recipe-center-->
+
+  <div class ="recipe-right"></div>
+</div><!--recipe-container-->
