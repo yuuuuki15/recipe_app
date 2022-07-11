@@ -1,5 +1,9 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_recipe, only: [:show, :edit, :update]
+  before_action :redirect_to_root, only: [:edit, :update]
+
+
   
   def index
     @recipes = Recipe.all.order("created_at DESC").where(public_id: 1)
@@ -22,7 +26,19 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+  end
+
+  def edit
+    @ingredient = @recipe.ingredients.build
+    @description = @recipe.descriptions.build
+  end
+
+  def update
+    if @recipe.update(recipe_params)
+      redirect_to recipe_path(@recipe)
+    else
+      render :edit
+    end
   end
 
   private
@@ -32,5 +48,13 @@ class RecipesController < ApplicationController
       ingredients_attributes: [:id, :name, :quantity, :recipe_id, :_destroy], 
       descriptions_attributes: [:id, :text, :recipe_id, :_destroy]
     ).merge(user_id: current_user.id)
+  end
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def redirect_to_root
+    redirect_to root_path if @recipe.user_id != current_user.id
   end
 end

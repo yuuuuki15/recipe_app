@@ -1,5 +1,5 @@
 class Description < ApplicationRecord
   belongs_to :recipe
 
-  validates :texts, presence: true
+  validates :text, presence: true
 end
