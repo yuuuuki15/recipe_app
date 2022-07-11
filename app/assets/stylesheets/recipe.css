@@ -63,38 +63,42 @@
 レシピ詳細画面
 ------------------------------------------------------------------*/
 .show-recipe-image{
-  height: 350px;
-  width:400px;
+  height: 300px;
+  width:80%;
   object-fit: cover;
   border-radius: 40px;
+}
+
+.table{
+  width: 250px;
 }
 /*-----------------------------------------------------------------
 レシピ詳細とレシピ編集で共有したい部分
 ------------------------------------------------------------------*/
 .recipe-container{
-  height: 2000px;
+  height: 100vh;
   width: 100vw;
   display: flex;
 }
 
 .recipe-left{
-  width: calc(20vw/2);
+  width: 10%;
   background-color: lightyellow;
 }
 .recipe-center{
-  width: 80vw;
+  width: 80%;
   display: flex;
   flex-direction: column;
 }
 
 .recipe-right{
-  width: calc(20vw/2);
+  width: 10%;
   background-color: lightyellow;
 }
 
 .recipe-top{
   width: 100%;
-  padding: 30px 100px 10px;
+  padding: 30px 50px 10px;
   background-color: white;
   display: flex;
   justify-content: space-around;
@@ -102,7 +106,7 @@
 
 .recipe-middle{
   width: 100%;
-  padding: 10px 100px;
+  padding: 10px 50px;
 }
 
 .recipe-bottom{
@@ -113,9 +117,91 @@
 /*-----------------------------------------------------------------
 レシピ投稿
 ------------------------------------------------------------------*/
+.recipe-top-left{
+  width: 50%;
+}
+
+.recipe-top-right{
+  width: 50%;
+}
+
+#previews{
+  height: 298px;
+  width: 298px;
+  border: 1px solid black;
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
 .preview-image{
-  height: 200px;
-  width:200px;
+  height: 300px;
+  width:300px;
   object-fit: cover;
   border-radius: 30px;
+}
+.img-upload{
+  padding-left: 50px;
+}
+
+.image-label {
+  padding: 10px 40px;
+  color: #ffffff;
+  background-color: #384878;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.recipe-amount{
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.right-justified{
+  text-align: right;
+  padding-bottom: 0px;
+}
+.nested-fields{
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.name-form{
+  width:190px;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px ridge #ccc;
+  margin-right: 5px;
+
+}
+
+.quantity-form{
+  width:70px;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px ridge #ccc;
+}
+
+.text-form{
+  width: 170px;
+  height: 150px;
+  border-radius: 5px;
+  border: 1px ridge #ccc;
+}
+
+#descriptions{
+  display: flex;
+  position: relative;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.add_field{
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }

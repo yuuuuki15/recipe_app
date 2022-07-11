@@ -1,3 +1,12 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Recipe_app</a>
+    <%= link_to '新規登録', new_user_registration_path%>
+    <%= link_to 'ログイン', new_user_session_path%>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+  </div>
+</nav>
+
 <!--詳細画面を表示する-->
 <div class ="recipe-container"><!--大枠-->
   <div class ="recipe-left"></div><!--左側の余白（メニューバーなど実装する予定）-->
