@@ -7,50 +7,69 @@
     <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
   </div>
 </nav>
+
 <!--入力フォーム-->
-<%= form_with model: @recipe, id: 'new_post', local: true do |f|%>
+<div class ="recipe-container"><!--大枠-->
+  <div class ="recipe-left"></div><!--左側の余白（メニューバーなど実装する予定）-->
+
+  <div class ="recipe-center"><!--レシピの詳細が表示されるメインのエリア-->
+  <%= form_with  model: @recipe, id: 'new_post', local: true do |f| %>
   <%= render 'devise/shared/error_messages', model: f.object %>
-  <div class ="form-main">
-    <%= f.label :タイトル %><br \>
-    <%= f.text_field :title, class: "form-control" %>
-  </div><!--form-main-->
-  <div class="img-upload">
-    <div id="previews"></div>
-    <%= f.label :画像 %><br \>
-    <%= f.file_field :image, id:"item-image" %>
-  </div>
-  <div class ="form-main">
-    <%= f.label :何人分 %><br \>
-    <%= f.text_field :amount, class: "form-control" %>
-  </div><!--form-main-->
-    <div id ="ingredients">
-      <%= f.fields_for :ingredients do |ingredient|%>
-      <%= render 'ingredient_fields', :f => ingredient%>
-      <% end %>
-      <div class ="links">
-        <%= link_to_add_association 'add_ingredient', f, :ingredients %>
+    <div class ="recipe-top">
+      <div class ="recipe-top-left"><!--画像-->
+        <div class="img-upload">
+          <div id="previews"></div>
+          <label class ="image-label">
+          <%= f.file_field :image, id:"item-image" %>ファイルを選択
+          </label>
+        </div>
       </div>
-    </div> <!--ingredients-->
-  <div class ="form-main">
-    <div id="descriptions">
-      <%= f.fields_for :descriptions do |description|%>
-      <%= render 'description_fields', :f => description%>
-      <% end %>
-      <div class ="links">
-        <%= link_to_add_association 'add_description', f, :descriptions %>
+      <div class ="recipe-top-right">
+        <div class ="form-main">
+          <%= f.label :タイトル, class:"bold"%><br \>
+          <%= f.text_field :title, class: "form-control" %>
+        </div><!--form-main-->
+        <div class ="right-justified">
+          <%= f.text_field :amount, class:"recipe-amount" %><span class="bold">人分</span>
+        </div><!--form-main-->
+        <div id ="ingredients">
+        <span class ="bold">　　　　材料　　　　　　　</span><span class="bold">分量</span>
+          <%= f.fields_for :ingredients do |ingredient|%>
+          <%= render 'ingredient_fields', :f => ingredient%>
+          <% end %>
+          <div class ="links">
+            <%= link_to_add_association '追加', f, :ingredients %>
+          </div>
+        </div> <!--ingredients-->
+      </div><!--recipe-top-right-->
+    </div><!--recipe-top-->
+    <div class ="recipe-middle">
+    <span class ="bold">手順</span>
+       <div id="descriptions">
+        <%= f.fields_for :descriptions do |description|%>
+        <%= render 'description_fields', :f => description%>
+        <% end %>
+        <div class ="links">
+          <%= link_to_add_association '追加', f, :descriptions %>
+        </div>
+      </div> <!--descriptions-->
+      </div><!--form-main-->
+      <div class ="form-main">
+        <%= f.label :コツ, class:"bold" %><br \>
+        <%= f.text_field :tip, class: "form-control" %>
+      </div><!--form-main-->
+      <div class ="form-switch">
+        <%= f.label :一般公開, class:"bold" %><br \>
+        <%= f.check_box :public_id, class: "form-check-input", checked: false %>
+      </div><!--form-switch-->
+      <div class ="form-main">
+        <div class ="form-submit">
+        <%= f.submit "投稿",class: "btn btn-primary" %>
       </div>
-    </div> <!--descriptions-->
-  </div><!--form-main-->
-  <div class ="form-main">
-    <%= f.label :コツ %><br \>
-    <%= f.text_field :tip, class: "form-control" %>
-  </div><!--form-main-->
-  <div class ="form-switch">
-    <%= f.label :一般公開 %><br \>
-    <%= f.check_box :public_id, class: "form-check-input", checked: false %>
-  </div><!--form-switch-->
-  <div class ="form-main">
-    <div class ="form-submit">
-    <%= f.submit "投稿",class: "btn btn-primary" %>
+    </div><!--recipe-middle-->
+    <div class ="recipe-bottom">
     </div>
-<% end %>
+  <% end %>
+  </div><!--recipe-center-->
+  <div class ="recipe-right"></div><!--右側の余白（メニューバーなど実装する予定）-->
+</div><!--recipe-container-->

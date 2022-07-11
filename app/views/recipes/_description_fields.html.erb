@@ -1,7 +1,6 @@
  <div class='nested-fields'>
     <div class="field">
-      <%= f.label :text %>
-      <%= f.text_area :text, cols:"30", rows:"5" %>
+      <%= f.text_area :text, cols:"30", rows:"5", class:"text-form" %>
     </div>
-    <%= link_to_remove_association "remove description", f %>
+    <%= link_to_remove_association "削除", f %>
   </div>

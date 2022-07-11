@@ -1,11 +1,9 @@
  <div class='nested-fields'>
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+    <div class="name-field">
+      <%= f.text_field :name, class: "name-form" %>
     </div>
-    <div class="field">
-      <%= f.label :quantity %>
-      <%= f.text_field :quantity %>
+    <div class="quantity-field">
+      <%= f.text_field :quantity, class: "quantity-form" %>
     </div>
-    <%= link_to_remove_association "remove ingredient", f %>
+    <%= link_to_remove_association "削除", f %>
   </div>
