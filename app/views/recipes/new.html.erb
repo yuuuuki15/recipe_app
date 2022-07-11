@@ -13,8 +13,8 @@
   <div class ="recipe-left"></div><!--左側の余白（メニューバーなど実装する予定）-->
 
   <div class ="recipe-center"><!--レシピの詳細が表示されるメインのエリア-->
-  <%= form_with  model: @recipe, id: 'new_post', local: true do |f| %>
-  <%= render 'devise/shared/error_messages', model: f.object %>
+    <%= form_with  model: @recipe, id: 'new_post', local: true do |f| %>
+    <%= render 'devise/shared/error_messages', model: f.object %>
     <div class ="recipe-top">
       <div class ="recipe-top-left"><!--画像-->
         <div class="img-upload">
@@ -44,28 +44,29 @@
       </div><!--recipe-top-right-->
     </div><!--recipe-top-->
     <div class ="recipe-middle">
-    <span class ="bold">手順</span>
+      <span class ="bold">手順</span>
        <div id="descriptions">
         <%= f.fields_for :descriptions do |description|%>
         <%= render 'description_fields', :f => description%>
         <% end %>
         <div class ="links">
           <%= link_to_add_association '追加', f, :descriptions %>
-        </div>
+        </div><!--links-->
       </div> <!--descriptions-->
-      </div><!--form-main-->
       <div class ="form-main">
         <%= f.label :コツ, class:"bold" %><br \>
         <%= f.text_field :tip, class: "form-control" %>
       </div><!--form-main-->
       <div class ="form-switch">
-        <%= f.label :一般公開, class:"bold" %><br \>
         <%= f.check_box :public_id, class: "form-check-input", checked: false %>
+        <%= f.label :一般公開, class:"bold" %><br \>
+        <p>一般公開すると、他のユーザーがこのレシピを見ることができるようになります。</p>
       </div><!--form-switch-->
       <div class ="form-main">
         <div class ="form-submit">
         <%= f.submit "投稿",class: "btn btn-primary" %>
       </div>
+      </div><!--form-main-->
     </div><!--recipe-middle-->
     <div class ="recipe-bottom">
     </div>

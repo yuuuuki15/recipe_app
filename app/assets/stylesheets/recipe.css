@@ -63,32 +63,36 @@
 レシピ詳細画面
 ------------------------------------------------------------------*/
 .show-recipe-image{
-  height: 250px;
-  width:300px;
+  height: 300px;
+  width:80%;
   object-fit: cover;
   border-radius: 40px;
+}
+
+.table{
+  width: 250px;
 }
 /*-----------------------------------------------------------------
 レシピ詳細とレシピ編集で共有したい部分
 ------------------------------------------------------------------*/
 .recipe-container{
-  height: 2000px;
+  height: 100vh;
   width: 100vw;
   display: flex;
 }
 
 .recipe-left{
-  width: calc(20vw/2);
+  width: 10%;
   background-color: lightyellow;
 }
 .recipe-center{
-  width: 80vw;
+  width: 80%;
   display: flex;
   flex-direction: column;
 }
 
 .recipe-right{
-  width: calc(20vw/2);
+  width: 10%;
   background-color: lightyellow;
 }
 
@@ -122,15 +126,15 @@
 }
 
 #previews{
-  height: 200px;
-  width: 200px;
+  height: 298px;
+  width: 298px;
   border: 1px solid black;
   border-radius: 30px;
   margin-bottom: 10px;
 }
 .preview-image{
-  height: 200px;
-  width:200px;
+  height: 300px;
+  width:300px;
   object-fit: cover;
   border-radius: 30px;
 }
