@@ -1,12 +1,13 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_recipe, only: [:show, :edit, :update]
-  before_action :redirect_to_root, only: [:edit, :update]
-
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_to_root, only: [:edit, :update, :destroy]
+  protect_from_forgery :except => [:destroy]
 
   
   def index
     @recipes = Recipe.all.order("created_at DESC").where(public_id: 1)
+    .or(Recipe.all.order("created_at DESC").where(user_id: current_user.id))
   end
 
   def new
@@ -39,6 +40,11 @@ class RecipesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @recipe.destroy
+    redirect_to root_path
   end
 
   private

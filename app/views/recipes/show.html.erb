@@ -23,8 +23,11 @@
       <div class ="recipe-top-right">
         <div class ="recipe-title"><!--レシピのタイトル-->
           <%= @recipe.title %>
-          <% if user_signed_in? && @recipe.user_id == current_user.id %>
-          <%= link_to '編集', edit_recipe_path, model: :@recipe%>
+          <div class ="button-wrapper">
+            <% if user_signed_in? && @recipe.user_id == current_user.id %>
+            <%= button_to '編集', edit_recipe_path, method: :get, class: "recipe-edit"%>
+            <%= button_to "削除", "/recipes/#{@recipe.id}", method: :delete, class: "recipe-destroy", data: { confirm: '本当に削除しますか？' } %>
+          </div>
           <% end %>
         </div>
         <div class ="recipe-user"><!--レシピのユーザー-->

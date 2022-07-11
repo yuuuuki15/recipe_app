@@ -72,6 +72,35 @@
 .table{
   width: 250px;
 }
+
+.button-wrapper{
+  display: flex;
+  align-items: center;
+}
+
+.recipe-edit{
+  width: 100px;
+  height: 50px;
+  background-color: rgb(238, 121, 75);
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 10px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.recipe-destroy{
+  width: 100px;
+  height: 50px;
+  background-color: rgb(238, 121, 75);
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
 /*-----------------------------------------------------------------
 レシピ詳細とレシピ編集で共有したい部分
 ------------------------------------------------------------------*/
