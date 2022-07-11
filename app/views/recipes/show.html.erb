@@ -23,6 +23,9 @@
       <div class ="recipe-top-right">
         <div class ="recipe-title"><!--レシピのタイトル-->
           <%= @recipe.title %>
+          <% if user_signed_in? && @recipe.user_id == current_user.id %>
+          <%= link_to '編集', edit_recipe_path, model: :@recipe%>
+          <% end %>
         </div>
         <div class ="recipe-user"><!--レシピのユーザー-->
           <%= @recipe.user.name %>
