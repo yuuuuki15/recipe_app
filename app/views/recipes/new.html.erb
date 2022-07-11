@@ -8,13 +8,14 @@
   </div>
 </nav>
 <!--入力フォーム-->
-<%= form_with model: @recipe, local: true do |f|%>
+<%= form_with model: @recipe, id: 'new_post', local: true do |f|%>
   <%= render 'devise/shared/error_messages', model: f.object %>
   <div class ="form-main">
     <%= f.label :タイトル %><br \>
     <%= f.text_field :title, class: "form-control" %>
   </div><!--form-main-->
   <div class="img-upload">
+    <div id="previews"></div>
     <%= f.label :画像 %><br \>
     <%= f.file_field :image, id:"item-image" %>
   </div>
