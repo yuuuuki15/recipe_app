@@ -35,7 +35,7 @@
     </div><!--recipe-top-->
     <div class ="recipe-middle">
       <div class ="recipe-method">
-        <span class ="bold">作り方：</span><%= @recipe.method %>
+        <span class ="bold">作り方：</span><%= @recipe.descriptions.map { |description| description.text }.join(', ') %>
       </div>
     </div>
     <div class ="recipe-bottom">
