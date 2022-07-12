@@ -19,20 +19,20 @@
         <% else %>
           <%= image_tag 'test_image.png', class:"recipe-image" %>
         <% end %>
-      </div>
+      </div><!--recipe-top-left-->
       <div class ="recipe-top-right">
         <div class ="recipe-title"><!--レシピのタイトル-->
           <%= @recipe.title %>
           <div class ="button-wrapper">
             <% if user_signed_in? && @recipe.user_id == current_user.id %>
             <%= button_to '編集', edit_recipe_path, method: :get, class: "recipe-edit"%>
-            <%= button_to "削除", "/recipes/#{@recipe.id}", method: :delete, class: "recipe-destroy", data: { confirm: '本当に削除しますか？' } %>
-          </div>
-          <% end %>
-        </div>
+            <%= button_to "削除", "/recipes/#{@recipe.id}", method: :delete, class: "recipe-destroy", data: { confirm: '本当に削除しますか？' } %>          
+            <% end %>
+          </div><!--button-wrapper-->
+        </div><!--recipe-title-->
         <div class ="recipe-user"><!--レシピのユーザー-->
           <%= link_to @recipe.user.name, "/users/#{@recipe.user.id}" %>
-        </div>
+        </div><!--recipe-user-->
         <div class ="recipe-ingredients"><!--レシピの材料-->
         <!--材料と分量をグラフにして取り出す-->
           <table class="table">
@@ -45,16 +45,16 @@
               <% end %>
             </tbody>
           </table>
-        </div><!--recipe-ingredient-->
+        </div><!--recipe-ingredients-->
       </div><!--recipe-top-right-->
     </div><!--recipe-top-->
     <div class ="recipe-middle">
       <div class ="recipe-method">
         <span class ="bold">作り方：</span><%= @recipe.descriptions.map { |description| description.text }.join(', ') %>
-      </div>
-    </div>
+      </div><!--recipe-method-->
+    </div><!--recipe-middle-->
     <div class ="recipe-bottom">
-    </div>
+    </div><!--recipe-bottom-->
   </div><!--recipe-center-->
 
   <div class ="recipe-right"></div>
