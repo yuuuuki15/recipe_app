@@ -104,3 +104,17 @@
   list-style: none;
   font-weight: 600;
 }
+
+/*=============================
+マイページ
+==============================*/
+.mypage-container{
+  height: auto;
+  width: 100vw;
+}
+
+.mypage-top{
+  display: flex;
+  justify-content: center;
+  height: 200px;
+}
