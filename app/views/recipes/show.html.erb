@@ -28,10 +28,19 @@
             <%= button_to '編集', edit_recipe_path, method: :get, class: "recipe-edit"%>
             <%= button_to "削除", "/recipes/#{@recipe.id}", method: :delete, class: "recipe-destroy", data: { confirm: '本当に削除しますか？' } %>
             <% end %>
-            <% if user_signed_in?%>
-            <%= link_to '献立追加', menus_path, method: :post %>
-            <div class ="calender-selction"></div>
-            <% end %>
+              <% if user_signed_in?%>
+              <div class ="add-menu-container">
+              <div id ="pull-down">献立追加</div>
+              <div id ="calender-selection">
+                <%= form_with model: @menu,url: recipe_menus_path(@recipe), method: :post, local: true do |f|%>
+                <div>
+                  <%= f.date_field :date, class:"date-form" %>
+                </div>
+                <p><%= f.submit "追加する",class: "btn btn-primary" %></p>
+                <% end %>
+              </div>
+              <% end %>
+            </div><!--calender-selection-->
           </div><!--button-wrapper-->
         </div><!--recipe-title-->
         <div class ="recipe-user"><!--レシピのユーザー-->

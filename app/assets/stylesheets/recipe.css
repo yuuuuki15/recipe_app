@@ -102,6 +102,15 @@
   font-weight: 600;
   text-decoration: none;
 }
+
+#calender-selection{
+  width: auto;
+  position: absolute;
+}
+
+#calender-selection{
+  display: none;
+}
 /*-----------------------------------------------------------------
 レシピ詳細とレシピ編集で共有したい部分
 ------------------------------------------------------------------*/
