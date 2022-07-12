@@ -31,7 +31,7 @@
           <% end %>
         </div>
         <div class ="recipe-user"><!--レシピのユーザー-->
-          <%= @recipe.user.name %>
+          <%= link_to @recipe.user.name, "/users/#{@recipe.user.id}" %>
         </div>
         <div class ="recipe-ingredients"><!--レシピの材料-->
         <!--材料と分量をグラフにして取り出す-->
