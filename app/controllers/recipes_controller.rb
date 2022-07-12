@@ -7,11 +7,11 @@ class RecipesController < ApplicationController
   
   def index
     if current_user
+    @recipes = Recipe.all.order("created_at DESC").where(public_id: 1)
+    .or(Recipe.all.order("created_at DESC").where(user_id: current_user.id))
+    else
       @recipes = Recipe.all.order("created_at DESC").where(public_id: 1)
-      .or(Recipe.all.order("created_at DESC").where(user_id: current_user.id))
-      else
-        @recipes = Recipe.all.order("created_at DESC").where(public_id: 1)
-      end
+    end
   end
 
   def new
