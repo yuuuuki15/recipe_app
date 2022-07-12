@@ -1,0 +1,74 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Recipe_app</a>
+    <%= link_to '新規登録', new_user_registration_path%>
+    <%= link_to 'ログイン', new_user_session_path%>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <% if user_signed_in?%>
+    <%= link_to 'マイページ', "/users/#{current_user.id}"%>
+    <% end %>
+  </div>
+</nav>
+<h1>マイページ</h1>
+<div class ="mypage-container">
+  <div class ="mypage-top">
+    <div class ="my-image">
+      <%= image_tag 'test_image.png', class:"recipe-image" %>
+    </div>
+    <div class ="profile-container">
+      <div class ="profile-name">
+        <span class ="bold">名前</span>：<%= @user.name %>
+      </div>
+      <div class ="profile-introduction">
+        <span class ="bold">自己紹介</span>：日本に住んでます。よろしくお願いします。
+      </div>
+    </div>
+  </div><!--mypage-top-->
+  <div class ="mypage-middle">
+  <h1>献立表</h1>
+    <div class='calendar'>
+      <% @week_days.each do |day| %>
+        <div class='item'>
+          <div class='date'>
+            <%= day[:month] %>/<%= day[:date] %><%= day[:wday]%>
+          </div>
+          <div class ="menu-container">
+            <ul>
+              <li>肉味噌炒め</li>
+              <li>チャーハン</li>
+              <li>味噌汁</li>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    </div><!--calender-->
+    <div class ="my-recipes">
+      <h2>作ったレシピ</h2>
+      <% @recipes.each do |recipe| %>
+      <div class ="recipe-box">
+        <div class ="recipe-box-left">
+          <% if recipe.image.attached? %>
+          <%= image_tag recipe.image, class:"recipe-image" %>
+          <% else %>
+            <%= image_tag 'test_image.png', class:"recipe-image" %>
+          <% end %>
+        </div>
+        <div class ="recipe-box-right">
+          <div class ="recipe-title text-truncate">
+            <%= link_to recipe.title, recipe_path(recipe) %>
+          </div>
+          <p>by <%= link_to recipe.user.name, "#", class: "text-truncate" %></p>
+          <div class ="recipe-method text-truncate">
+            <span class ="bold">作り方：</span><%= recipe.descriptions.map { |description| description.text }.join(', ') %>
+          </div>
+          <div class ="recipe-ingredients text-truncate">
+            <span class ="bold">材料　：</span><%= recipe.ingredients.map { |ingredient| ingredient.name }.join(', ') %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div><!--my-recipes-->
+  </div><!--mypage-middle-->
+  <div class ="mypage-bottom">
+  </div>
+</div>
