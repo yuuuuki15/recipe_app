@@ -25,6 +25,23 @@
     </div>
   </div><!--mypage-top-->
   <div class ="mypage-middle">
+  <h1>献立表</h1>
+    <div class='calendar'>
+      <% @week_days.each do |day| %>
+        <div class='item'>
+          <div class='date'>
+            <%= day[:month] %>/<%= day[:date] %><%= day[:wday]%>
+          </div>
+          <div class ="menu-container">
+            <ul>
+              <li>肉味噌炒め</li>
+              <li>チャーハン</li>
+              <li>味噌汁</li>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    </div><!--calender-->
     <div class ="my-recipes">
       <h2>作ったレシピ</h2>
       <% @recipes.each do |recipe| %>
