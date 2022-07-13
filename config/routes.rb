@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :menus, only: [:create]
   end
   resources :users, only: [:show]
+  resources :lists, only: [:index, :new, :create]
 end
