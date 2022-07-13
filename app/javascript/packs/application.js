@@ -11,6 +11,7 @@ require("jquery")
 require("@rails/ujs").start()
 require("@nathanvda/cocoon")
 require('../preview')
+require('../calender')
 import "bootstrap"
 import "../stylesheets/application"
 

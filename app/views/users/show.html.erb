@@ -33,10 +33,12 @@
             <%= day[:month] %>/<%= day[:date] %><%= day[:wday]%>
           </div>
           <div class ="menu-container">
-            <ul>
-              <li>肉味噌炒め</li>
-              <li>チャーハン</li>
-              <li>味噌汁</li>
+            <ul class ="menu-list">
+            <% day[:menu].each do |x|%>
+              <li>
+                <%= link_to x.title, recipe_path(x) %>
+              </li>
+            <% end %>
             </ul>
           </div>
         </div>

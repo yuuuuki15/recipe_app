@@ -148,3 +148,7 @@
   width: 100%;
   border: 1px solid black;
 }
+
+.menu-list{
+  list-style: none;
+}
