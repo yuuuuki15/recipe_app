@@ -36,7 +36,7 @@ hoge
 - has_many :recipes
 - has_many :comments
 - has_many :menus
-- has_one  :list
+- has_many  :lists
 - has_many :follower
 - has_many :followed
 - has_many :favorites
