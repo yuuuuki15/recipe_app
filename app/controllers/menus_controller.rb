@@ -2,8 +2,10 @@ class MenusController < ApplicationController
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @menu = Menu.new(menu_params)
-    @menu.save
-    flash[:success] = '献立を追加しました'
+    if @menu.save
+    flash[:notice] = '献立を追加しました'
+    redirect_to ("/recipes/#{@recipe.id}")
+    end
   end
 
   private

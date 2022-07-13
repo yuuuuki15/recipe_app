@@ -34,9 +34,9 @@
           </div>
           <div class ="menu-container">
             <ul>
-              <li>肉味噌炒め</li>
-              <li>チャーハン</li>
-              <li>味噌汁</li>
+              <% @menus.each do |menu|%>
+              <li><%= menu.recipe.title %></li>
+              <% end %>
             </ul>
           </div>
         </div>

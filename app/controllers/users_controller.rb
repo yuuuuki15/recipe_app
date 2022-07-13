@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   def show
-    get_week
     @user = User.find(params[:id])
     @recipes = @user.recipes.order("created_at DESC")
+    @menus = Menu.all
+    get_week
   end
 
   def get_week
