@@ -33,10 +33,12 @@
             <%= day[:month] %>/<%= day[:date] %><%= day[:wday]%>
           </div>
           <div class ="menu-container">
-            <ul>
-              <% @menus.each do |menu|%>
-              <li><%= menu.recipe.title %></li>
-              <% end %>
+            <ul class ="menu-list">
+            <% day[:menu].each do |x|%>
+              <li>
+                <%= x %>
+              </li>
+            <% end %>
             </ul>
           </div>
         </div>
