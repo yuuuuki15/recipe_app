@@ -1,0 +1,11 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Recipe_app</a>
+    <%= link_to '新規登録', new_user_registration_path%>
+    <%= link_to 'ログイン', new_user_session_path%>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <% if user_signed_in?%>
+    <%= link_to 'マイページ', user_path(current_user)%>
+    <% end %>
+  </div>
+</nav>

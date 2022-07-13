@@ -20,7 +20,7 @@
 }  
 
 .notice {
-  background-color: greenyellow;
+  background-color: lightblue;
   font-weight: 500;
   font-size: 20px;
 }
@@ -29,4 +29,8 @@
   background-color: red;
   font-weight: 500;
   font-size: 20px;
+}
+
+.navbar{
+  background-color: #ddd;
 }

@@ -1,7 +1,25 @@
 class ListsController < ApplicationController
+  def index
+  end
 
-def new
-  @list = List.new
-end
+  def create
+    #レシピのidを整数に変換
+    num = (params[:recipe]).to_i
+    @recipe = Recipe.find(num)
+    #レシピの材料を全て取り出す
+    @ingredients = @recipe.ingredients
+    list = List.new
+    binding.pry
+    @ingredients.each do |ingredient|
+      list = List.new(ingredient_name: ingredient.name, ingredient_quantity: ingredient.quantity, user_id: current_user.id)
+      list.save
+    end
+    flash[:notice] = 'リストを追加しました'
+    redirect_to "/users/#{current_user.id}"
+  end
 
+  private
+  def list_params
+    params.require(:list)
+  end
 end

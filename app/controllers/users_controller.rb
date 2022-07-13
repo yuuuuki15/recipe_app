@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @recipes = @user.recipes.order("created_at DESC")
     @menus = Menu.all
     get_week
+    @list = List.new
   end
 
   def get_week
