@@ -28,7 +28,7 @@
             <% day[:menu].each do |x|%>
               <li>
                 <%= link_to x.title, recipe_path(x) %>
-                <%= link_to "追加", create_list_path(recipe: x), method: :post %>
+                <%= link_to "追加", create_list_path(x), method: :post %>
               </li>
             <% end %>
             </ul>

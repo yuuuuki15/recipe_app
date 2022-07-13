@@ -184,3 +184,5 @@ rspec
 VSCode
 - タスク管理  
 Github
+- データベース
+mysql,mariadb
