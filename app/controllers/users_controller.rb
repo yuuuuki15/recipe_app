@@ -16,10 +16,10 @@ class UsersController < ApplicationController
     7.times do |x|
       today_menus = []
       menus.each do |menu|
-        today_menus.push(menu.recipe.title) if menu.date == @first_day + x
+        today_menus.push(menu.recipe) if menu.date == @first_day + x
       end
-      day = @first_day + (x - 1)
-      days = { wday: wdays[day.wday], month: day.month, date: day.day, menu: today_menus }
+      day = @first_day + (x)
+      days = { wday: wdays[day.wday - 1], month: day.month, date: day.day, menu: today_menus }
       @week_days.push(days)
     end
   end

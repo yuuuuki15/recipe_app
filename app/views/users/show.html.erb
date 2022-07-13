@@ -36,7 +36,7 @@
             <ul class ="menu-list">
             <% day[:menu].each do |x|%>
               <li>
-                <%= x %>
+                <%= link_to x.title, recipe_path(x) %>
               </li>
             <% end %>
             </ul>
