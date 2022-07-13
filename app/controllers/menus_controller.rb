@@ -5,6 +5,9 @@ class MenusController < ApplicationController
     if @menu.save
     flash[:notice] = '献立を追加しました'
     redirect_to ("/recipes/#{@recipe.id}")
+    else
+    flash[:alert] = '献立を追加できませんでした'
+    redirect_to ("/recipes/#{@recipe.id}")
     end
   end
 

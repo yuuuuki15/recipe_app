@@ -15,16 +15,18 @@
  */
 
 .notifications {
-  color: grey;
+  color: black;
   text-align: center;
 }  
 
 .notice {
   background-color: greenyellow;
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .alert {
-  background-color: orange;
+  background-color: red;
+  font-weight: 500;
+  font-size: 20px;
 }
