@@ -91,16 +91,17 @@ hoge
 - belongs_to :recipe
 
 
-## descriptions テーブル
+## lists テーブル
 
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| text     | string     | null: false                    |
-| recipe   | references | null: false, foreign_key: true |
+| Column              | Type       | Options                        |
+| ------------------- | ---------- | ------------------------------ |
+| ingredient_name     | string     | null: false                    |
+| ingredient_quantity | string     |                                |
+| user                | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :recipe
+- belongs_to :user
 
 
 
