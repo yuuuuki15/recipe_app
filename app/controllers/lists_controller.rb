@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
   def index
     @user = User.find(current_user.id)
-    @lists = @user.lists
+    @lists = @user.lists.order(:ingredient_name)
   end
 
   def create
