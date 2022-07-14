@@ -1,11 +1,4 @@
-<nav class="navbar navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Recipe_app</a>
-    <%= link_to '新規登録', new_user_registration_path%>
-    <%= link_to 'ログイン', new_user_session_path%>
-    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-  </div>
-</nav>
+<%= render "navbar"%>
 
 <!--詳細画面を表示する-->
 <div class ="recipe-container"><!--大枠-->
@@ -30,17 +23,15 @@
             <% end %>
               <% if user_signed_in?%>
               <div class ="add-menu-container">
-              <div id ="pull-down">献立追加</div>
-              <div id ="calender-selection">
-                <%= form_with model: @menu,url: recipe_menus_path(@recipe), method: :post, local: true do |f|%>
-                <div>
+                <div id ="pull-down">献立追加</div>
+                <div id ="calender-selection">
+                  <%= form_with model: @menu,url: recipe_menus_path(@recipe), method: :post, local: true do |f|%>
                   <%= f.date_field :date, class:"date-form" %>
-                </div>
-                <p><%= f.submit "追加する",class: "btn btn-primary" %></p>
-                <% end %>
-              </div>
-              <% end %>
-            </div><!--calender-selection-->
+                  <p><%= f.submit "追加する",class: "btn btn-primary" %></p>
+                  <% end %><!--kondate-form-->
+                </div><!--calender-selection-->
+              </div><!--add-menu-container-->
+              <% end %><!--if-->
           </div><!--button-wrapper-->
         </div><!--recipe-title-->
         <div class ="recipe-user"><!--レシピのユーザー-->

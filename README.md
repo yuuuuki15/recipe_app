@@ -36,7 +36,7 @@ hoge
 - has_many :recipes
 - has_many :comments
 - has_many :menus
-- has_one  :list
+- has_many  :lists
 - has_many :follower
 - has_many :followed
 - has_many :favorites
@@ -91,16 +91,17 @@ hoge
 - belongs_to :recipe
 
 
-## descriptions テーブル
+## lists テーブル
 
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| text     | string     | null: false                    |
-| recipe   | references | null: false, foreign_key: true |
+| Column              | Type       | Options                        |
+| ------------------- | ---------- | ------------------------------ |
+| ingredient_name     | string     | null: false                    |
+| ingredient_quantity | string     |                                |
+| user                | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :recipe
+- belongs_to :user
 
 
 
@@ -183,3 +184,5 @@ rspec
 VSCode
 - タスク管理  
 Github
+- データベース
+mysql,mariadb

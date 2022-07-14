@@ -1,0 +1,20 @@
+<%= render "recipes/navbar"%>
+<div class="lists-container">
+  <div class ="lists-header">
+    <h1>買い物リスト</h1>
+  </div><!--lists-header-->
+  <div class ="lists-box">
+    <% @lists.each do |list|%>
+      <div class ="list-box">
+        <div class ="list-left">
+        <!--チェックボックスをつける-->
+          <input type="checkbox" name="list_id" value="<%= list.id %>">
+          <%= list.ingredient_name%>
+        </div>
+        <div class ="list-right">
+          <%= list.ingredient_quantity%>
+        </div>
+      </div><!--list-box-->
+    <% end %>
+  </div><!--lists-box-->
+</div><!--lists-container-->

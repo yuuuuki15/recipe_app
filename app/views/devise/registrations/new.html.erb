@@ -1,13 +1,6 @@
+
 <body>
-  <div class = "header">
-    <div class ="header-left">
-      <%= link_to "トップページ", root_path%>
-    </div>
-    <div class ="header-right">
-      <%= link_to "ログイン", new_session_path(resource_name)%>
-      <%= link_to "新規登録", new_registration_path(resource_name)%>
-    </div>
-  </div> <!--header-->
+  <%= render "recipes/navbar"%>
   <div class ="main">
     <div class ="card shadow">
       <div class ="card-header">
