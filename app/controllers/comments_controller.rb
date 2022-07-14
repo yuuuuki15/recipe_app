@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
+  before_action :redirect_to_root, only: [:create]
+
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @comment = Comment.new(comment_params)
-    binding.pry
     if @comment.save
       flash[:notice] = 'コメントを投稿しました'
       redirect_to recipe_path(@recipe)
