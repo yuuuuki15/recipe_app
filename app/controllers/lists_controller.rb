@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  protect_from_forgery :except => [:destroy]
   def index
     @user = User.find(current_user.id)
     @lists = @user.lists.order(:ingredient_name)
@@ -17,6 +18,15 @@ class ListsController < ApplicationController
     end
     flash[:notice] = 'リストを追加しました'
     redirect_to "/users/#{current_user.id}"
+  end
+
+  def edit
+    @list = List.find(params[:id])
+  end
+
+  def destroy
+    @list = List.find(params[:id])
+    @list.destroy
   end
 
   private
