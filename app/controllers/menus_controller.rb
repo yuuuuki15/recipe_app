@@ -1,4 +1,7 @@
 class MenusController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+  before_action :redirect_to_root, only: [:create]
+
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @menu = Menu.new(menu_params)

@@ -32,6 +32,7 @@ class RecipesController < ApplicationController
 
   def show
    @menu = Menu.new
+    @comment = Comment.new
   end
 
   def edit

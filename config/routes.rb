@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   root 'recipes#index'
   resources :recipes do
     resources :menus, only: [:create]
+    resources :comments, only: [:create]
   end
   resources :users, only: [:show]
   resources :lists, only: [:index, :edit, :destroy]
   post '/lists', to: 'lists#create', as: 'create_list'
+
 end
