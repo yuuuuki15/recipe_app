@@ -1,3 +1,7 @@
 .list-box{
   display: flex;
 }
+
+.list-data{
+  display: none;
+}
