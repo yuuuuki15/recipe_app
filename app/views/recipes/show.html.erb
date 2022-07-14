@@ -59,6 +59,22 @@
     </div><!--recipe-middle-->
     <div class ="recipe-bottom">
     <h1>コメント一覧</h1>
+    <% if user_signed_in? %>
+      <%= form_with model: @comment,url: recipe_comments_path(@recipe), method: :post, local: true do |f|%>
+      <%= f.text_area :content, class:"comment-content" %>
+      <p><%= f.submit "コメントする",class: "btn btn-primary" %></p>
+      <% end %><!--comment-form-->
+    <% end %>
+    <% @recipe.comments.order("created_at DESC").each do |comment| %>
+      <div class ="comment-container">
+        <div class ="comment-user">
+          <%= link_to comment.user.name, "/users/#{comment.user.id}" %>
+        </div><!--comment-user-->
+        <div class ="comment-content">
+          <%= comment.content %>
+        </div><!--comment-content-->
+      </div><!--comment-container-->
+    <% end %>
     </div><!--recipe-bottom-->
   </div><!--recipe-center-->
 
