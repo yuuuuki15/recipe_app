@@ -12,7 +12,7 @@ require("@rails/ujs").start()
 require("@nathanvda/cocoon")
 require('../preview')
 require('../calender')
-require('../delete_list')
+require('../list')
 import "bootstrap"
 import "../stylesheets/application"
 
