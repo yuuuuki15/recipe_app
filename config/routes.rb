@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'recipes#index'
   resources :recipes do
     resources :menus, only: [:create]
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :destroy]
   end
   resources :users, only: [:show]
   resources :lists, only: [:index, :edit, :destroy]

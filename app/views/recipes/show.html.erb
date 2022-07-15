@@ -72,6 +72,9 @@
         </div><!--comment-user-->
         <div class ="comment-content">
           <%= comment.content %>
+          <% if current_user == comment.user %>
+          <%= link_to "削除", "/recipes/#{@recipe.id}/comments/#{comment.id}", method: :delete%>
+          <% end %>
         </div><!--comment-content-->
       </div><!--comment-container-->
     <% end %>
