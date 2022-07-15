@@ -78,6 +78,7 @@
         <div class ="recipe-box-right">
           <div class ="recipe-title text-truncate">
             <%= link_to recipe.title, recipe_path(recipe) %>
+            <%= link_to '削除', favorite_path(recipe), method: :delete %>
           </div>
           <p>by <%= link_to recipe.user.name, "#", class: "text-truncate" %></p>
           <div class ="recipe-method text-truncate">

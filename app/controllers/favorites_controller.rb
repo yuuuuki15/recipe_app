@@ -14,6 +14,15 @@ class FavoritesController < ApplicationController
     end
   end
 
+  def destroy
+    num = (params[:id]).to_i
+    @recipe = Recipe.find(num)
+    @favorite = Favorite.find_by(user_id: current_user.id, recipe_id: @recipe.id)
+    @favorite.destroy
+    flash[:notice] = 'お気に入りを解除しました'
+    redirect_to user_path(current_user.id)
+  end
+
   private
   def favorite_params
     params.require(:favorite).merge(user_id, recipe_id)
