@@ -5,7 +5,10 @@ class FavoritesController < ApplicationController
     num = (params[:format]).to_i
     @recipe = Recipe.find(num)
     @favorite = Favorite.new(user_id: current_user.id, recipe_id: @recipe.id)
-    if @favorite.save
+    if Favorite.where(user_id: current_user.id, recipe_id: @recipe.id).exists?
+      flash[:alert] = 'お気に入りにすでに登録されています'
+      redirect_to recipe_path(@recipe)
+    elsif @favorite.save
       flash[:notice] = 'お気に入りに登録しました'
       redirect_to recipe_path(@recipe)
     else
