@@ -53,7 +53,7 @@
           <div class ="recipe-title text-truncate">
             <%= link_to recipe.title, recipe_path(recipe) %>
           </div>
-          <p>by <%= link_to recipe.user.name, "#", class: "text-truncate" %></p>
+          <p>by <%= link_to recipe.user.name, user_path(recipe.user), class: "text-truncate" %></p>
           <div class ="recipe-method text-truncate">
             <span class ="bold">作り方：</span><%= recipe.descriptions.map { |description| description.text }.join(', ') %>
           </div>
@@ -64,6 +64,7 @@
       </div>
       <% end %>
     </div><!--my-recipes-->
+    <% if current_user == @user%>
     <div class ="favorite-recipe">
       <h2>お気に入りレシピ</h2>
       <% @favorite_recipes.each do |recipe|%>
@@ -78,8 +79,9 @@
         <div class ="recipe-box-right">
           <div class ="recipe-title text-truncate">
             <%= link_to recipe.title, recipe_path(recipe) %>
+            <%= link_to '削除', favorite_path(recipe), method: :delete %>
           </div>
-          <p>by <%= link_to recipe.user.name, "#", class: "text-truncate" %></p>
+          <p>by <%= link_to recipe.user.name, user_path(recipe.user), class: "text-truncate" %></p>
           <div class ="recipe-method text-truncate">
             <span class ="bold">作り方：</span><%= recipe.descriptions.map { |description| description.text }.join(', ') %>
           </div>
@@ -90,6 +92,7 @@
       </div>
       <% end %>
     <div><!--favorite-recipe-->
+    <% end %>
   </div><!--mypage-middle-->
   <div class ="mypage-bottom">
   </div>

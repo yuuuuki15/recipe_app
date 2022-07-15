@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:create, :destroy]
 
   def create
     num = (params[:format]).to_i
@@ -12,6 +12,15 @@ class FavoritesController < ApplicationController
       flash[:alert] = 'お気に入りに登録できませんでした'
       redirect_to recipe_path(@recipe)
     end
+  end
+
+  def destroy
+    num = (params[:id]).to_i
+    @recipe = Recipe.find(num)
+    @favorite = Favorite.find_by(user_id: current_user.id, recipe_id: @recipe.id)
+    @favorite.destroy
+    flash[:notice] = 'お気に入りを解除しました'
+    redirect_to user_path(current_user.id)
   end
 
   private
