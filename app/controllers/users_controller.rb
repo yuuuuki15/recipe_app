@@ -10,6 +10,16 @@ class UsersController < ApplicationController
       .map { |favorite| Recipe.find(favorite.recipe_id) }
   end
 
+  def follows
+    user = User.find(params[:id])
+    @users = user.following_user.page(params[:page]).per(3).reverse_order
+  end
+  
+  def followers
+    user = User.find(params[:id])
+    @users = user.follower_user.page(params[:page]).per(3).reverse_order
+  end
+
   def get_week
     wdays = ['(月)','(火)','(水)','(木)','(金)','(土)','(日)']
     @first_day = Date.today.beginning_of_week
