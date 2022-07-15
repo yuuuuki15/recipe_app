@@ -17,4 +17,8 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:content).merge(user_id: current_user.id, recipe_id: @recipe.id)
   end
+
+  def redirect_to_root
+    redirect_to root_path if current_user.nil?
+  end
 end
