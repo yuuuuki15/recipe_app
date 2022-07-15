@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:create, :destroy]
 
   def create
     num = (params[:format]).to_i
