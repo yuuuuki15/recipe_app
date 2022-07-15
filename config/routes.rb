@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :lists, only: [:index, :edit, :destroy]
   post '/lists', to: 'lists#create', as: 'create_list'
-
+  resources :favorites, only: [:create]
 end

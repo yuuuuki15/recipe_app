@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :menus, dependent: :destroy
   has_many :lists, dependent: :destroy
   has_many :comments
+  has_many :favorites, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

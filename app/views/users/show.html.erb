@@ -16,6 +16,7 @@
     </div>
   </div><!--mypage-top-->
   <div class ="mypage-middle">
+  <% if current_user == User.find(params[:id])%>
   <h1>献立表</h1>
     <div class='calendar'>
       <% @week_days.each do |day| %>
@@ -36,6 +37,7 @@
         </div>
       <% end %>
     </div><!--calender-->
+  <% end %><!--献立表の表示領域if分-->
     <div class ="my-recipes">
       <h2>作ったレシピ</h2>
       <% @recipes.each do |recipe| %>
@@ -62,6 +64,10 @@
       </div>
       <% end %>
     </div><!--my-recipes-->
+    <div class ="favorite-recipe">
+      <h2>お気に入りレシピ</h2>
+      <% @favorites.each do |favorite|%>
+    <div><!--favorite-recipe-->
   </div><!--mypage-middle-->
   <div class ="mypage-bottom">
   </div>
