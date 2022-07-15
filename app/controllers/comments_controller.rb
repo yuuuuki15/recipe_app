@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :redirect_to_root, only: [:create]
+  before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :redirect_to_root, only: [:create, :destroy]
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
