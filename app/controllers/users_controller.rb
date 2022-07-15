@@ -8,18 +8,21 @@ class UsersController < ApplicationController
     favorites = Favorite.where(user_id: @user.id)
     @favorite_recipes = favorites.order("created_at DESC")
       .map { |favorite| Recipe.find(favorite.recipe_id) }
+    @following_users = @user.following_user
+    @follower_users = @user.follower_user
   end
 
   def follows
     user = User.find(params[:id])
-    @users = user.following_user.page(params[:page]).per(3).reverse_order
+    @users = user.following_user
   end
   
   def followers
     user = User.find(params[:id])
-    @users = user.follower_user.page(params[:page]).per(3).reverse_order
+    @users = user.follower_user
   end
 
+  private
   def get_week
     wdays = ['(月)','(火)','(水)','(木)','(金)','(土)','(日)']
     @first_day = Date.today.beginning_of_week
