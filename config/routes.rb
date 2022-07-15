@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   get 'users/show'
   devise_for :users
+  resources :users, only:[:index, :show, :edit, :update] do
+    member do
+      get :follows, :followers
+    end
+    resource :relationships, only: [:create, :destroy]
+  end
   root 'recipes#index'
   resources :recipes do
     resources :menus, only: [:create]
