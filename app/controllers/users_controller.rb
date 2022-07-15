@@ -5,6 +5,9 @@ class UsersController < ApplicationController
     @menus = Menu.all
     get_week
     @list = List.new
+    favorites = Favorite.where(user_id: @user.id)
+    @favorite_recipes = favorites.order("created_at DESC")
+      .map { |favorite| Recipe.find(favorite.recipe_id) }
   end
 
   def get_week
