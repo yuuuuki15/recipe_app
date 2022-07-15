@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :destroy]
+
   protect_from_forgery :except => [:destroy]
   def index
     @user = User.find(current_user.id)

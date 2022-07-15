@@ -20,17 +20,17 @@
 }  
 
 .notice {
-  background-color: lightblue;
+  background-color: rgba(150, 234, 168, 0.5);
   font-weight: 500;
   font-size: 20px;
 }
 
 .alert {
-  background-color: red;
+  background-color: rgba(255,0,0,0.5);
   font-weight: 500;
   font-size: 20px;
 }
 
 .navbar{
-  background-color: #ddd;
+  background-color: rgba(221,221,221,0.5);
 }
