@@ -1,4 +1,6 @@
 class FavoritesController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+
   def create
     num = (params[:format]).to_i
     @recipe = Recipe.find(num)
