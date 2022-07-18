@@ -11,11 +11,47 @@
   </head>
 
   <body>
-    <div class="notifications">
+  <div class="notifications">
       <% flash.each do |key, value| %> 
         <%= content_tag(:div, value, class: key)%>
       <% end %>
     </div>
+  <header>
+  <!-- ナビゲーションバー -->
+  <nav class="navbar navbar-light bg-light fixed-top">
+    <!-- タイトル -->
+    <a class="navbar-brand" href="/">Recipe_app</a>
+<!-- ハンバーガーメニュー -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- ナビゲーションメニュー -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class = "card-container-body">
+      <ul class="navbar-nav">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'マイページ', user_path(current_user), class: "without-border" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to '買い物リスト', lists_path, class: "without-border" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "without-border" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "新規登録", new_user_registration_path, class: "without-border" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログイン", new_user_session_path, class: "without-border" %>
+          </li>
+        <% end %>
+      </ul>
+      </div>
+    </div>
+  </nav>
+  </header>
     <%= yield %>
   </body>
 </html>

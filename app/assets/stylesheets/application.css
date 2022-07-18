@@ -32,5 +32,28 @@
 }
 
 .navbar{
-  background-color: rgba(221,221,221,0.5);
+  height: 60px;
+  width: 100%;
+}
+
+.navbar-collapse{
+  height: 80px;
+  width: 100%;
+}
+
+.card-container-body{
+  height: auto;
+  width: 150px;
+  margin-left: auto;
+  margin-top: 10px;
+  padding-left: 20px;
+  border-radius: 20px;
+  background-color: lightgrey;
+}
+
+.without-border{
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 20px;
 }
