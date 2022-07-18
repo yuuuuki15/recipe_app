@@ -1,5 +1,10 @@
 <h1>マイページ</h1>
 <div class ="mypage-container">
+<div class="notifications">
+        <% flash.each do |key, value| %> 
+        <%= content_tag(:div, value, class: key)%>
+      <% end %>
+    </div>
   <div class ="mypage-top">
     <div class ="my-image">
       <%= image_tag 'test_image.png', class:"recipe-image" %>

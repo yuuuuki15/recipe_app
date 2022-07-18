@@ -19,21 +19,24 @@
   text-align: center;
 }  
 
-.notice {
+.notice-message {
   background-color: rgba(150, 234, 168, 0.5);
   font-weight: 500;
   font-size: 20px;
+  padding: 10px;
 }
 
-.alert {
+.alert-message {
   background-color: rgba(255,0,0,0.5);
   font-weight: 500;
   font-size: 20px;
+  padding: 10px;
 }
 
 .navbar{
   height: 60px;
   width: 100%;
+  background-color: white;
 }
 
 .navbar-collapse{
@@ -54,6 +57,6 @@
 .without-border{
   text-decoration: none;
   color: black;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 20px;
 }

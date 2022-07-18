@@ -3,6 +3,11 @@
   <div class ="recipe-left"></div><!--左側の余白（メニューバーなど実装する予定）-->
 
   <div class ="recipe-center"><!--レシピの詳細が表示されるメインのエリア-->
+  <div class="notifications">
+        <% flash.each do |key, value| %> 
+        <%= content_tag(:div, value, class: key + "-message")%>
+      <% end %>
+    </div>
     <div class ="recipe-top">
       <div class ="recipe-top-left"><!--画像-->
         <% if @recipe.image.attached? %>

@@ -2,6 +2,7 @@
 レシピ一覧画面
 ------------------------------------------------------------------*/
 .recipe-index-container{
+  background-color: rgba(248, 245, 227, 1);
   height: 2000px;
   width: 100vw;
   display: flex;
@@ -11,10 +12,12 @@
   width: calc((100vw - 700px)/2);
 }
 .recipe-index-center{
-  background-color: antiquewhite;
   width: 700px;
   display: flex;
   flex-direction: column;
+  background-color: rgba(255,255,255,0.8);
+  margin: 30px 0px 30px 0px;
+  border-radius: 30px;
 }
 
 .recipe-index-right{
