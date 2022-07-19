@@ -46,6 +46,12 @@ class ListsController < ApplicationController
     @lists = @user.lists.order(:ingredient_name)
   end
 
+  def update
+    binding.pry
+    @list = List.find(params[:id])
+    @list.update(list_params)
+  end
+
   private
   def list_params
     params.require(:list).permit(:ingredient_name, :ingredient_quantity, :user_id)

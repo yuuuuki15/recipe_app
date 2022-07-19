@@ -5,10 +5,10 @@
   <div class ="lists-box">
   <table>
     <% @lists.each do |list|%>
-    <%= form_with model: list, local: true do |f|%>
+    <%= form_with model: list, class: "edit-list-form", name: list.id, local: true do |f|%>
     <tr>
       <div class ="list-box">
-        <div class ="list-left">
+        <div id ="list-left">
         <td>
           <%= f.text_field :ingredient_name, value: list.ingredient_name %>
         </td>
@@ -34,9 +34,11 @@
         </td>-->
       </div><!--list-box-->
     </tr>
-    
     <% end %>
     <% end %>
     </table>
+    <div id ="update-button">
+    更新
+    </div><!--update-button-->
   </div><!--lists-box-->
 </div><!--lists-container-->
