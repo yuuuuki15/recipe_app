@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2022_07_15_092624) do
   end
 
   create_table "lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "check", default: 0
     t.string "ingredient_name", null: false
     t.string "ingredient_quantity"
     t.bigint "user_id", null: false

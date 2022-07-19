@@ -98,6 +98,7 @@ hoge
 | ingredient_name     | string     | null: false                    |
 | ingredient_quantity | string     |                                |
 | user                | references | null: false, foreign_key: true |
+| check               | integer    | default: 0                     |
 
 ### Association
 

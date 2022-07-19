@@ -10,7 +10,11 @@
         <div class ="list-left">
         <!--チェックボックスをつける-->
         <td>
-          <input type="checkbox" name="list_id" value="<%= list.id %>">
+          <%= form_for(list, remote: true) do |f| %>
+            <div class="field">
+              <%= f.check_box :ingredient_name %>
+            </div>
+          <% end %>
           <%= list.ingredient_name%>
         </td>
         </div><!--list-left-->
