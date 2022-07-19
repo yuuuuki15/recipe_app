@@ -2,7 +2,7 @@
 <div class ="mypage-container">
 <div class="notifications">
         <% flash.each do |key, value| %> 
-        <%= content_tag(:div, value, class: key)%>
+        <%= content_tag(:div, value, class: key + "-message")%>
       <% end %>
     </div>
   <div class ="mypage-top">

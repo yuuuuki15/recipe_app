@@ -13,6 +13,8 @@ require("@nathanvda/cocoon")
 require('../preview')
 require('../calender')
 require('../list')
+require('../list_check')
+require('../list_update')
 import "bootstrap"
 import "../stylesheets/application"
 

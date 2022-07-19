@@ -1,30 +1,21 @@
 <div class="lists-container">
   <div class ="lists-header">
-    <h1>買い物リスト</h1><%= link_to '編集', lists_edit_path %>
+    <h1>買い物リスト</h1>
   </div><!--lists-header-->
   <div class ="lists-box">
   <table>
     <% @lists.each do |list|%>
+    <%= form_with model: list, class: "edit-list-form", name: list.id, local: true do |f|%>
     <tr>
       <div class ="list-box">
-        <div class ="list-left">
-        <!--チェックボックスをつける-->
+        <div id ="list-left">
         <td>
-          <div class="field">
-            <%= form_for(list, remote: true) do |f| %>
-              <%= f.check_box :check, data: list.id%>
-            <% end %>
-          </div>
-          <div id = "update">
-          <%= list.ingredient_name %>
-          </div>
+          <%= f.text_field :ingredient_name, value: list.ingredient_name %>
         </td>
         </div><!--list-left-->
         <div class ="list-right">
         <td>
-          <div id ="update">
-          <%= list.ingredient_quantity %>
-          </div>
+          <%= f.text_field :ingredient_quantity, value: list.ingredient_quantity%>
         </td>
         </div><!--list-right-->
         <td>
@@ -44,6 +35,10 @@
       </div><!--list-box-->
     </tr>
     <% end %>
+    <% end %>
     </table>
+    <div id ="update-button">
+    更新
+    </div><!--update-button-->
   </div><!--lists-box-->
 </div><!--lists-container-->

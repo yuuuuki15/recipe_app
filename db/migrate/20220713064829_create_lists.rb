@@ -1,6 +1,7 @@
 class CreateLists < ActiveRecord::Migration[6.0]
   def change
     create_table :lists do |t|
+      t.integer :check, default: 0
       t.string :ingredient_name, null: false
       t.string :ingredient_quantity
       t.references :user, null: false, foreign_key: true
