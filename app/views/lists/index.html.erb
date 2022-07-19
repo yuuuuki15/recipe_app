@@ -12,7 +12,7 @@
         <td>
           <%= form_for(list, remote: true) do |f| %>
             <div class="field">
-              <%= f.check_box :ingredient_name %>
+              <%= f.check_box :check, data: list.id%>
             </div>
           <% end %>
           <%= list.ingredient_name%>

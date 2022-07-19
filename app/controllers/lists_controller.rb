@@ -31,6 +31,16 @@ class ListsController < ApplicationController
     @list.destroy
   end
 
+  def check
+    @list = List.find(params[:id])
+    # チェックがついていたら外し、ついていなかったらつける
+    if @list.check == 0
+      @list.update(check: 1)
+    else
+      @list.update(check: 0)
+    end
+  end
+
   private
   def list_params
     params.require(:list).permit(:ingredient_name, :ingredient_quantity, :user_id)

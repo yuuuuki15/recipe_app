@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show]
   resources :lists, only: [:index, :edit, :destroy]
+  patch 'lists/:id/check', to: 'lists#check', as: 'check'
   post '/lists', to: 'lists#create', as: 'create_list'
   resources :favorites, only: [:create, :destroy]
 end
