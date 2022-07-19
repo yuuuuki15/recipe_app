@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
   resources :users, only: [:show]
-  resources :lists, only: [:index, :edit, :destroy]
+  resources :lists, only: [:index, :destroy]
+  get 'lists/edit', to: 'lists#edit'
+  patch 'lists/update', to: 'lists#update'
   patch 'lists/:id/check', to: 'lists#check', as: 'check'
   post '/lists', to: 'lists#create', as: 'create_list'
   resources :favorites, only: [:create, :destroy]

@@ -41,6 +41,11 @@ class ListsController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(current_user.id)
+    @lists = @user.lists.order(:ingredient_name)
+  end
+
   private
   def list_params
     params.require(:list).permit(:ingredient_name, :ingredient_quantity, :user_id)
