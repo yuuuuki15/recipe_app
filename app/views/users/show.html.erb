@@ -50,8 +50,8 @@
             <% day[:menu].each do |x|%>
               <li>
                 <%= link_to x.recipe.title, recipe_path(x) %>
-                <%= link_to "追加", create_list_path(x.recipe), method: :post %>
-                <%= link_to "削除", recipe_menu_path(x), method: :delete %>
+                <%= link_to "➕", create_list_path(x.recipe), method: :post, class: "no-underline" %>
+                <%= link_to "❌", recipe_menu_path(x), method: :delete, class: "no-underline" %>
               </li>
             <% end %>
             </ul>
