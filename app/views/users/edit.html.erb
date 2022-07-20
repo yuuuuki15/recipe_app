@@ -1,0 +1,12 @@
+<div class ="mypage-container">
+  <div class ="edit-profile-container">
+    <h1>プロフィール編集</h1>
+    <%= form_for @user do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :profile %>
+      <%= f.text_area :profile %>
+      <%= f.submit %>
+      <% end %>
+  </div>
+</div>

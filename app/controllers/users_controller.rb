@@ -12,6 +12,16 @@ class UsersController < ApplicationController
     @follower_users = @user.follower_user
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to user_path(@user)
+  end
+
   def follows
     user = User.find(params[:id])
     @users = user.following_user
@@ -23,6 +33,10 @@ class UsersController < ApplicationController
   end
 
   private
+  def user_params
+    params.require(:user).permit(:name, :email, :profile)
+  end
+
   def get_week
     wdays = ['(月)','(火)','(水)','(木)','(金)','(土)','(日)']
     @first_day = Date.today.beginning_of_week
