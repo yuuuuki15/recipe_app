@@ -1,5 +1,7 @@
 .lists-container{
   margin-top: 60px;
+  height: calc(100vh - 60px);
+  background-color: rgba(248, 245, 227, 1);
 }
 .list-box{
   display: flex;

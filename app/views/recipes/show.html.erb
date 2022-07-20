@@ -19,9 +19,12 @@
       <div class ="recipe-top-right">
         <div class ="recipe-title"><!--レシピのタイトル-->
           <%= @recipe.title %>
+        </div><!--recipe-title-->
+          <div class ="add-favorite">
           <% if user_signed_in? %>
-          <%= link_to 'お気に入り登録', favorites_path(@recipe), method: :post%>
+          <%= button_to 'お気に入り登録', favorites_path(@recipe), method: :post, class: "no-underline"%>
           <% end %>
+          </div>
           <div class ="button-wrapper">
             <% if user_signed_in? && @recipe.user_id == current_user.id %>
             <%= button_to '編集', edit_recipe_path, method: :get, class: "recipe-edit"%>
@@ -29,7 +32,7 @@
             <% end %>
               <% if user_signed_in?%>
               <div class ="add-menu-container">
-                <div id ="pull-down">献立追加</div>
+                <button id ="pull-down">献立追加</button>
                 <div id ="calender-selection">
                   <%= form_with model: @menu,url: recipe_menus_path(@recipe), method: :post, local: true do |f|%>
                   <%= f.date_field :date, class:"date-form" %>
@@ -39,7 +42,6 @@
               </div><!--add-menu-container-->
               <% end %><!--if-->
           </div><!--button-wrapper-->
-        </div><!--recipe-title-->
         <div class ="recipe-user"><!--レシピのユーザー-->
           <%= link_to @recipe.user.name, "/users/#{@recipe.user.id}" %>
         </div><!--recipe-user-->
@@ -70,12 +72,14 @@
       </div><!--recipe-method-->
     </div><!--recipe-middle-->
     <div class ="recipe-bottom">
-    <h1>コメント一覧</h1>
+    <div class ="comment-index bold">コメント一覧</div>
     <% if user_signed_in? %>
+    <div class ="comment-form">
       <%= form_with model: @comment,url: recipe_comments_path(@recipe), method: :post, local: true do |f|%>
-      <%= f.text_area :content, class:"comment-content" %>
-      <p><%= f.submit "コメントする",class: "btn btn-primary" %></p>
+        <%= f.text_area :content, class:"comment-content" %>
+      <p><%= f.submit "コメント",class: "btn btn-primary comment-button" %></p>
       <% end %><!--comment-form-->
+    </div><!--comment-container-->
     <% end %>
     <% @recipe.comments.order("created_at DESC").each do |comment| %>
       <div class ="comment-container">

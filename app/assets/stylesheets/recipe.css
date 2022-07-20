@@ -57,12 +57,6 @@
   font-weight: 800;
   color: black;
 }
-.recipe-title{
-  text-decoration: none;
-  color: rgb(238, 121, 75);
-  font-weight: 600;
-  font-size: 30px;
-}
 
 /*-----------------------------------------------------------------
 レシピ詳細画面
@@ -72,6 +66,12 @@
   width:80%;
   object-fit: cover;
   border-radius: 40px;
+}
+
+.recipe-title{
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 30px;
 }
 
 .table{
@@ -95,6 +95,10 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+}
+
+.add-favorite{
+  text-decoration: none;
 }
 
 .button-wrapper{
@@ -134,11 +138,29 @@
 #calender-selection{
   display: none;
 }
+
+.comment-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.comment-content{
+  height: 80px;
+  width: 300px;
+}
+
+.comment-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 /*-----------------------------------------------------------------
 レシピ詳細とレシピ編集で共有したい部分
 ------------------------------------------------------------------*/
 .recipe-container{
-  height: 100vh;
+  height: auto;
   width: 100vw;
   display: flex;
   margin-top: 60px;

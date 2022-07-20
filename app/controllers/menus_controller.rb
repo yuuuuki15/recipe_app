@@ -8,6 +8,7 @@ class MenusController < ApplicationController
     if begin @menu.save
     rescue Exception => e
       flash[:alert] = "予期せぬエラーが発生しました"
+      STDERR.puts e.message
       return redirect_to recipe_path(@recipe)
     end
       flash[:notice] = '献立を追加しました'
