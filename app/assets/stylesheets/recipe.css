@@ -78,6 +78,25 @@
   width: 250px;
 }
 
+.text-form-show{
+  width: 170px;
+  height: 150px;
+  border-radius: 5px;
+  border: 1px ridge #ccc;
+  margin: 10px 20px;
+  padding: 10px;
+}
+
+.index-num{
+  color: rgb(238, 121, 75);
+}
+
+.recipe-method{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
 .button-wrapper{
   display: flex;
   align-items: center;

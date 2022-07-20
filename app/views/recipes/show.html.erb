@@ -59,8 +59,14 @@
       </div><!--recipe-top-right-->
     </div><!--recipe-top-->
     <div class ="recipe-middle">
+    <span class ="bold">手順：</span>
       <div class ="recipe-method">
-        <span class ="bold">作り方：</span><%= @recipe.descriptions.map { |description| description.text }.join(', ') %>
+        <% @descriptions.each_with_index do |description, i| %>
+          <div class ="text-form-show">
+          <b class ="index-num"><%= i + 1 %></b>
+          <%= description%>
+          </div>
+        <% end %>
       </div><!--recipe-method-->
     </div><!--recipe-middle-->
     <div class ="recipe-bottom">

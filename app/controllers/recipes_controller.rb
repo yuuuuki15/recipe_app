@@ -33,6 +33,7 @@ class RecipesController < ApplicationController
   def show
    @menu = Menu.new
     @comment = Comment.new
+    @descriptions = @recipe.descriptions.map { |description| description.text }
   end
 
   def edit
