@@ -5,7 +5,11 @@ class MenusController < ApplicationController
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @menu = Menu.new(menu_params)
-    if @menu.save
+    if begin @menu.save
+    rescue Exception => e
+      flash[:alert] = "予期せぬエラーが発生しました"
+      return redirect_to recipe_path(@recipe)
+    end
       flash[:notice] = '献立を追加しました'
       redirect_to("/recipes/#{@recipe.id}")
     else
