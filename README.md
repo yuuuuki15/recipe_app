@@ -161,10 +161,9 @@ hoge
 
 ## profiles テーブル
 
-| Column       | Type       | Options                        |
-| ------------ | ---------- | ------------------------------ |
-| introduction | text       |                                |
-| user         | references | null: false, foreign_key: true |
+| Column       | Type | Options |
+| ------------ | ---- | ------- |
+| introduction | text |         |
 
 ### Association
 
