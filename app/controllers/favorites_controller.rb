@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
 
   def create
-    num = (params[:format]).to_i
+    num = params[:format].to_i
     @recipe = Recipe.find(num)
     @favorite = Favorite.new(user_id: current_user.id, recipe_id: @recipe.id)
     if Favorite.where(user_id: current_user.id, recipe_id: @recipe.id).exists?
@@ -18,7 +18,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    num = (params[:id]).to_i
+    num = params[:id].to_i
     @recipe = Recipe.find(num)
     @favorite = Favorite.find_by(user_id: current_user.id, recipe_id: @recipe.id)
     @favorite.destroy
@@ -27,6 +27,7 @@ class FavoritesController < ApplicationController
   end
 
   private
+
   def favorite_params
     params.require(:favorite).merge(user_id, recipe_id)
   end

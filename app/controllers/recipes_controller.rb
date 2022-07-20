@@ -2,16 +2,15 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   before_action :redirect_to_root, only: [:edit, :update, :destroy]
-  protect_from_forgery :except => [:destroy]
+  protect_from_forgery except: [:destroy]
 
-  
   def index
-    if current_user
-    @recipes = Recipe.all.order("created_at DESC").where(public_id: 1)
-    .or(Recipe.all.order("created_at DESC").where(user_id: current_user.id))
-    else
-      @recipes = Recipe.all.order("created_at DESC").where(public_id: 1)
-    end
+    @recipes = if current_user
+                 Recipe.all.order('created_at DESC').where(public_id: 1)
+                       .or(Recipe.all.order('created_at DESC').where(user_id: current_user.id))
+               else
+                 Recipe.all.order('created_at DESC').where(public_id: 1)
+               end
   end
 
   def new
@@ -31,7 +30,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-   @menu = Menu.new
+    @menu = Menu.new
     @comment = Comment.new
     @descriptions = @recipe.descriptions.map { |description| description.text }
   end
@@ -57,10 +56,9 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :image, :amount, :tip, :public_id, 
-      ingredients_attributes: [:id, :name, :quantity, :recipe_id, :_destroy], 
-      descriptions_attributes: [:id, :text, :recipe_id, :_destroy]
-    ).merge(user_id: current_user.id)
+    params.require(:recipe).permit(:title, :image, :amount, :tip, :public_id,
+                                   ingredients_attributes: [:id, :name, :quantity, :recipe_id, :_destroy],
+                                   descriptions_attributes: [:id, :text, :recipe_id, :_destroy]).merge(user_id: current_user.id)
   end
 
   def set_recipe

@@ -1,17 +1,17 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
 
-  protect_from_forgery :except => [:destroy]
+  protect_from_forgery except: [:destroy]
   def index
     @user = User.find(current_user.id)
     @lists = @user.lists.order(:ingredient_name)
   end
 
   def create
-    #レシピのidを整数に変換
-    num = (params[:format]).to_i
+    # レシピのidを整数に変換
+    num = params[:format].to_i
     @recipe = Recipe.find(num)
-    #レシピの材料を全て取り出す
+    # レシピの材料を全て取り出す
     @ingredients = @recipe.ingredients
     list = List.new
     @ingredients.each do |ingredient|
@@ -53,6 +53,7 @@ class ListsController < ApplicationController
   end
 
   private
+
   def list_params
     params.require(:list).permit(:ingredient_name, :ingredient_quantity, :user_id)
   end
