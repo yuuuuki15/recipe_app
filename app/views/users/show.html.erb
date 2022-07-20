@@ -51,6 +51,7 @@
               <li>
                 <%= link_to x.title, recipe_path(x) %>
                 <%= link_to "追加", create_list_path(x), method: :post %>
+                <%= link_to "削除", recipe_menu_path(x), method: :delete %>
               </li>
             <% end %>
             </ul>

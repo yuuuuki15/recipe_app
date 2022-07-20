@@ -14,6 +14,14 @@ class MenusController < ApplicationController
     end
   end
 
+  def destroy
+    binding.pry
+    @menu = Menu.find(params[:id])
+    @menu.destroy
+    flash[:notice] = '献立を削除しました'
+    redirect_to ("/users/#{current_user.id}")
+  end
+
   private
 
   def menu_params

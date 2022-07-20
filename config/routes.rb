@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   root 'recipes#index'
   resources :recipes do
-    resources :menus, only: [:create]
+    resources :menus, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
   end
   resources :users, only: [:show]

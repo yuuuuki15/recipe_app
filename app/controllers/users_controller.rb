@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @recipes = @user.recipes.order('created_at DESC')
     @menus = Menu.all
+    @menu = Menu.new
     get_week
     @list = List.new
     favorites = Favorite.where(user_id: @user.id)
