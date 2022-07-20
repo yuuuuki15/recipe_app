@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   patch 'lists/:id/check', to: 'lists#check', as: 'check'
   post '/lists', to: 'lists#create', as: 'create_list'
   resources :favorites, only: [:create, :destroy]
+  resources :profiles, only: [:edit, :update]
 end
