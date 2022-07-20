@@ -30,6 +30,7 @@ hoge
 | name               | string | null: false               |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
+| profile            | string |                           |
 
 ### Association
 
@@ -40,7 +41,6 @@ hoge
 - has_many :follower
 - has_many :followed
 - has_many :favorites
-- has_one :prrofile
 
 
 
@@ -157,17 +157,6 @@ hoge
 
 - belongs_to :user
 - belongs_to :recipe
-
-
-## profiles テーブル
-
-| Column       | Type | Options |
-| ------------ | ---- | ------- |
-| introduction | text |         |
-
-### Association
-
-- belongs_to :user
 
 # 画面遷移図
 ![](https://i.gyazo.com/2d411bf5b2f57855d10718d2c9f2ccd2.png)

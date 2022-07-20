@@ -6,9 +6,6 @@
       <% end %>
     </div>
   <div class ="mypage-top">
-    <div class ="my-image">
-      <%= image_tag 'test_image.png', class:"recipe-image" %>
-    </div>
     <div class ="profile-container">
       <div class ="profile-name">
         <span class ="bold">名前</span>：<%= @user.name %>
@@ -27,12 +24,16 @@
               <h6>フォロワー<%= @follower_users.count %></h6>
             <% end %>
           <% end %>
+          <% if current_user == @user%>
           <%= link_to 'プロフィール編集', edit_user_path(@user) %>
+          <% end %>
         <% end %>
       </div>
+      <% if @user.profile%>
       <div class ="profile-introduction">
         <span class ="bold">自己紹介</span>：<%= @user.profile %>
       </div>
+      <% end %>
     </div>
   </div><!--mypage-top-->
   <div class ="mypage-middle">
