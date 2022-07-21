@@ -99,12 +99,18 @@
   width: 100vw;
   margin-top: 60px;
   background-color: rgba(248, 245, 227, 1);
+  padding-bottom: 50px;
 }
 
 .mypage-top{
   display: flex;
   justify-content: center;
   height: 200px;
+}
+
+.follow-follower{
+  display: flex;
+  justify-content: space-between;
 }
 
 .calendar{

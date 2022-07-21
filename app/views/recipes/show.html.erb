@@ -1,4 +1,5 @@
 <!--詳細画面を表示する-->
+<div class ="background-filler">
 <div class ="recipe-container"><!--大枠-->
   <div class ="recipe-left"></div><!--左側の余白（メニューバーなど実装する予定）-->
 
@@ -70,6 +71,14 @@
           </div>
         <% end %>
       </div><!--recipe-method-->
+      <% if @recipe.tip != ""%>
+      <div class ="recipe-tip">
+        <span class ="bold">コツ：</span>
+        <div class ="recipe-tip-box">
+          <%= @recipe.tip %>
+        </div>
+      </div>
+      <% end %>
     </div><!--recipe-middle-->
     <div class ="recipe-bottom">
     <div class ="comment-index bold">コメント一覧</div>
@@ -99,3 +108,4 @@
 
   <div class ="recipe-right"></div>
 </div><!--recipe-container-->
+</div><!--background-filler-->
