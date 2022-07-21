@@ -10,3 +10,7 @@
 .list-data{
   display: none;
 }
+
+.list-left{
+  display: flex;
+}

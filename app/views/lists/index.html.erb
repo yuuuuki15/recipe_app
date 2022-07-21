@@ -7,22 +7,20 @@
     <% @lists.each do |list|%>
     <tr>
       <div class ="list-box">
-        <div class ="list-left">
         <!--チェックボックスをつける-->
-        <td>
+        <td class ="list-left">
           <div class="field">
             <%= form_for(list, remote: true) do |f| %>
               <%= f.check_box :check, data: list.id%>
             <% end %>
           </div>
-          <div id = "update">
+          <div id = "update" data=<%= list.id %>>
           <%= list.ingredient_name %>
           </div>
         </td>
-        </div><!--list-left-->
         <div class ="list-right">
         <td>
-          <div id ="update">
+          <div id ="update" data=<%= list.id %>>
           <%= list.ingredient_quantity %>
           </div>
         </td>
