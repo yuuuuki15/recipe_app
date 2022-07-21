@@ -175,7 +175,7 @@
 ------------------------------------------------------------------*/
 .background-filler{
   background-color: lightyellow;
-  height: 100vh;
+  height: calc(100vh - 60px);
 }
 
 .recipe-container{
