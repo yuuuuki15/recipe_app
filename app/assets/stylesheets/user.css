@@ -119,6 +119,7 @@
   align-items: center;
   height: 200px;
   width: 100%;
+  margin-bottom: 50px;
 }
 
 .item{
@@ -132,6 +133,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.my-recipes{
+  margin-bottom: 50px;
 }
 
 .menu-container{

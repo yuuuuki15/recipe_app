@@ -7,7 +7,7 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :descriptions, reject_if: :all_blank, allow_destroy: true
   has_many :menus, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
 
   with_options presence: true do
     validates :title, length: { maximum: 40 }

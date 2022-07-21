@@ -19,10 +19,10 @@
           <%= link_to recipe.title, recipe_path(recipe) %>
         </div>
         <p>by <%= link_to recipe.user.name, "/users/#{recipe.user.id}", class: "text-truncate" %></p>
-        <div class ="recipe-method text-truncate">
+        <div class ="recipe-index-method text-truncate">
           <span class ="bold">作り方：</span><%= recipe.descriptions.map { |description| description.text }.join(', ') %>
         </div>
-        <div class ="recipe-ingredients text-truncate">
+        <div class ="recipe-index-ingredients text-truncate">
           <span class ="bold">材料　：</span><%= recipe.ingredients.map { |ingredient| ingredient.name }.join(', ') %>
         </div>
       </div> <!--recipe-box-right-->
