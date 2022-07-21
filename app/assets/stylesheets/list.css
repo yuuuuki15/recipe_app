@@ -3,8 +3,12 @@
   height: calc(100vh - 60px);
   background-color: rgba(248, 245, 227, 1);
 }
+
 .list-box{
   display: flex;
+  height: 50px;
+  align-items: center;
+  font-size: 20px;
 }
 
 .list-data{

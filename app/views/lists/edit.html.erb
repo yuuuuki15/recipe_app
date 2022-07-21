@@ -6,8 +6,7 @@
   <table>
     <% @lists.each do |list|%>
     <%= form_with model: list, class: "edit-list-form", name: list.id, local: true do |f|%>
-    <tr>
-      <div class ="list-box">
+    <tr class ="list-box">
         <div id ="list-left">
         <td>
           <%= f.text_field :ingredient_name, value: list.ingredient_name %>
@@ -32,7 +31,6 @@
           </svg>
         </div>
         </td>-->
-      </div><!--list-box-->
     </tr>
     <% end %>
     <% end %>
