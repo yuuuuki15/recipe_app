@@ -28,3 +28,6 @@ ja:
         ingredient_name: 食材名
         ingredient_quantity: 分量
         user: ユーザー
+      favorite:
+        user: ユーザー
+        recipe: レシピ
