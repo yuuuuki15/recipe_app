@@ -18,3 +18,9 @@ ja:
         text: 作り方
       comment:
         content: コメント
+        user: ユーザー
+        recipe: レシピ
+      menu:
+       date: 日付
+       user: ユーザー
+       recipe: レシピ
