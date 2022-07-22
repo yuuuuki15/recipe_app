@@ -172,16 +172,14 @@ password: hoge123<br>
 
 # 開発環境
 - フロントエンド  
-HTML,CSS,JavaScript
+HTML,CSS,JavaScript  
 - バックエンド  
-Ruby
+Ruby on Rails(Ruby)  
 - インフラ  
-EC2,S3,
-- テスト  
-rspec
-- テキストエディタ  
-VSCode
+AWS(EC2,S3)  
+- OS  
+Mac/Linux  
+- データベース  
+MySQL/MariaDB  
 - タスク管理  
-Github
-- データベース
-mysql,mariadb
+Github  
