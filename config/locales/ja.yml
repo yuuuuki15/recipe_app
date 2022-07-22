@@ -15,4 +15,6 @@ ja:
         name: 材料名
         quantity: 材料の分量
       recipe/descriptions:
-        title: 作り方
+        text: 作り方
+      comment:
+        content: コメント

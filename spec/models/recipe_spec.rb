@@ -46,16 +46,10 @@ RSpec.describe Recipe, type: :model do
         expect(@recipe.errors.full_messages).to include('レシピの分量は0以外の値にしてください')
       end
 
-      it '作り方が空だと保存できないこと' do
-        @recipe.method = nil
+      it '作り方が101文字以上だと保存できないこと' do
+        @recipe.descriptions.build(text: 'a' * 101)
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include('作り方を入力してください')
-      end
-
-      it '作り方が1001文字以上だと保存できないこと' do
-        @recipe.method = 'a' * 1001
-        @recipe.valid?
-        expect(@recipe.errors.full_messages).to include('作り方は1000文字以内で入力してください')
+        expect(@recipe.errors.full_messages).to include('作り方は100文字以内で入力してください')
       end
 
       it '公開設定が空だと保存できないこと' do

@@ -2,7 +2,6 @@ FactoryBot.define do
   factory :recipe do
     title { Faker::Food.dish }
     amount { Faker::Number.number }
-    add_attribute(:method) { Faker::Food.description } # methodが予約語のため
     tip { Faker::Food.description }
     public_id { 0 }
     association :user
