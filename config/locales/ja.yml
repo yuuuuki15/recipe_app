@@ -24,3 +24,7 @@ ja:
        date: 日付
        user: ユーザー
        recipe: レシピ
+      list:
+        ingredient_name: 食材名
+        ingredient_quantity: 分量
+        user: ユーザー
