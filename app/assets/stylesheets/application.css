@@ -47,12 +47,12 @@
 
 .card-container-body{
   height: auto;
-  width: 150px;
+  width: 160px;
   margin-left: auto;
   margin-top: 10px;
-  padding-left: 20px;
+  padding: 20px;
   border-radius: 20px;
-  background-color: white;
+  background-color: rgba(200, 142, 60, 0.75);
 }
 
 .without-border{
