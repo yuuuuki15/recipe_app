@@ -19,14 +19,7 @@ RSpec.describe "Recipes", type: :system do
   context "レシピ投稿ができるとき" do
     it "ログインしたユーザーはレシピを投稿できる" do
       # ログインする
-      basic_pass root_path
-      find("button[type=button]").click
-      expect(page).to have_content "ログイン"
-      visit new_user_session_path
-      fill_in "Eメール", with: @user.email
-      fill_in "パスワード", with: @user.password
-      find("input[name='commit']").click
-      expect(current_path).to eq(root_path)
+      sign_in(@user)
       # 新規投稿ページへのリンクがあることを確認する
       expect(page).to have_content "レシピを投稿する"
       # 新規投稿ページへ遷移する
@@ -46,9 +39,19 @@ RSpec.describe "Recipes", type: :system do
       # トップページへ遷移する
       expect(current_path).to eq(root_path)
       # トップページに先ほど投稿した内容が存在することを確認する
-      expect(page).to have_selector "img[src$='test_image.png']"
       expect(page).to have_content @recipe_title
+    end
+  end
 
+  context "レシピ投稿ができないとき" do
+    it "ログインしていないユーザーはレシピを投稿できない" do
+      # トップページに遷移する
+      visit root_path
+      # 新規投稿ページへのリンクがないことを確認する
+      expect(page).to have_no_content "レシピを投稿する"
+      # 新規投稿ページへ遷移しようとすると、トップページに遷移する
+      visit new_recipe_path
+      expect(current_path).to eq(new_user_session_path)
     end
   end
 end
