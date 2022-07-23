@@ -112,3 +112,51 @@ describe "レシピ編集", type: :system do
     end
   end
 end
+
+describe "レシピ削除", type: :system do
+  before do
+    @recipe1 = FactoryBot.create(:recipe)
+    @recipe2 = FactoryBot.create(:recipe)
+  end
+
+  context "レシピ削除ができるとき" do
+    it "ログインしたユーザーは自分のレシピを削除できる" do
+      # レシピ１を投稿したユーザーでログインする
+      sign_in(@recipe1.user)
+      # レシピ１の詳細ページへ遷移する
+      visit recipe_path(@recipe1) 
+      # 削除ボタンをクリックする
+      expect{
+      accept_alert do
+      find("input[value='削除']").click
+      end
+      sleep 3  # 削除されるまで時間がかかるため
+      }.to change { Recipe.count }.by(-1)
+      # Alert textを確認する
+      # トップページへ遷移する
+      expect(current_path).to eq(root_path)
+      # トップページにはレシピ１が存在しないことを確認する
+      expect(page).to have_no_content @recipe1.title
+    end
+  end
+
+  context "レシピ削除ができないとき" do
+    it "ログインしたユーザーは自分以外のレシピを削除できない" do
+      # レシピ１を投稿したユーザーでログインする
+      sign_in(@recipe1.user)
+      # レシピ２の詳細ページへ遷移する
+      visit recipe_path(@recipe2) 
+      # 削除ボタンがないことを確認する
+      expect(page).to have_no_content "削除"
+    end
+
+    it "ログインしていないユーザーはレシピを削除できない" do
+      # トップページに遷移する
+      visit root_path
+      # レシピの詳細ページへ遷移する
+      visit recipe_path(@recipe1)
+      # 削除ボタンがないことを確認する
+      expect(page).to have_no_content "削除"
+    end
+  end
+end
