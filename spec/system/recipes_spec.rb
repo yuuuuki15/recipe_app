@@ -160,3 +160,22 @@ describe "レシピ削除", type: :system do
     end
   end
 end
+
+describe "レシピ詳細", type: :system do
+  before do
+    @recipe = FactoryBot.create(:recipe)
+  end
+
+  it "ログインしたユーザーはレシピ詳細ページに遷移してコメント投稿欄が表示される" do
+    sign_in(@recipe.user)
+    visit recipe_path(@recipe)
+    expect(page).to have_selector "input[name='commit']"
+    expect(page).to have_selector "textarea[name='comment[content]']"
+  end
+
+  it "ログインしていない状態でレシピ詳細ページに遷移できるもののコメント投稿欄が表示されない" do
+    visit recipe_path(@recipe)
+    expect(page).to have_no_selector "input[name='commit']"
+    expect(page).to have_no_selector "textarea[name='comment[content]']"
+  end
+end
