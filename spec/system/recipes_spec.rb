@@ -55,3 +55,60 @@ RSpec.describe "Recipes", type: :system do
     end
   end
 end
+
+describe "レシピ編集", type: :system do
+  before do
+    @recipe1 = FactoryBot.create(:recipe)
+    @recipe2 = FactoryBot.create(:recipe)
+  end
+
+  context "レシピ編集ができるとき" do
+    it "ログインしたユーザーは自分のレシピを編集できる" do
+      # レシピ１を投稿したユーザーでログインする
+      sign_in(@recipe1.user)
+      # レシピ１の詳細ページへ遷移する
+      visit recipe_path(@recipe1) 
+      # 編集ページへ遷移する
+      visit edit_recipe_path(@recipe1)
+      # 投稿フォームに情報を入力する
+      fill_in "recipe[title]", with: "#{@recipe1.title}編集後のタイトル"
+      fill_in "recipe[tip]", with: "#{@recipe1.tip}編集後のコツ"
+      # 編集してもRecipeモデルのカウントは増えないことを確認する
+      expect{
+      find("input[name='commit']").click
+      }.to change { Recipe.count }.by(0)
+      # トップページへ遷移する
+      expect(current_path).to eq(recipe_path(@recipe1))
+      # トップページには編集後のタイトルが存在することを確認する
+      expect(page).to have_content "#{@recipe1.title}編集後のタイトル"
+    end
+  end
+
+  context "レシピ編集ができないとき" do
+    it "ログインしたユーザーは自分以外のレシピを編集できない" do
+      # レシピ１を投稿したユーザーでログインする
+      sign_in(@recipe1.user)
+      # レシピ２の詳細ページへ遷移する
+      visit recipe_path(@recipe2) 
+      # 編集ボタンがないことを確認する
+      expect(page).to have_no_content "編集"
+      # 編集ページへ遷移する
+      visit edit_recipe_path(@recipe2)
+      # トップページへ遷移する
+      expect(current_path).to eq(root_path)
+    end
+
+    it "ログインしていないユーザーはレシピを編集できない" do
+      # トップページに遷移する
+      visit root_path
+      # レシピの詳細ページへ遷移する
+      visit recipe_path(@recipe1)
+      # 編集ボタンがないことを確認する
+      expect(page).to have_no_content "編集"
+      # 編集ページへ遷移する
+      visit edit_recipe_path(@recipe1)
+      # トップページへ遷移する
+      expect(current_path).to eq(new_user_session_path)
+    end
+  end
+end
