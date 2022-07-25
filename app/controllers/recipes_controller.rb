@@ -7,9 +7,9 @@ class RecipesController < ApplicationController
   def index
     @recipes = if current_user
                  Recipe.all.order('created_at DESC').where(public_id: 1)
-                       .or(Recipe.all.order('created_at DESC').where(user_id: current_user.id))
+                       .or(Recipe.all.order('created_at DESC').where(user_id: current_user.id)).page(params[:page]).per(8)
                else
-                 Recipe.all.order('created_at DESC').where(public_id: 1)
+                 Recipe.all.order('created_at DESC').where(public_id: 1).page(params[:page]).per(8)
                end
   end
 
