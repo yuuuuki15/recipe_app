@@ -18,6 +18,18 @@ RSpec.describe Comment, type: :model do
         @comment.valid?
         expect(@comment.errors.full_messages).to include("コメントを入力してください")
       end
+
+      it 'ユーザーが紐付いていないと保存できないこと' do
+        @comment.user = nil
+        @comment.valid?
+        expect(@comment.errors.full_messages).to include("ユーザーを入力してください")
+      end
+
+      it 'レシピが紐付いていないと保存できないこと' do
+        @comment.recipe = nil
+        @comment.valid?
+        expect(@comment.errors.full_messages).to include("レシピを入力してください")
+      end
     end
   end
 end
