@@ -8,6 +8,7 @@
     <div class ="profile-container">
       <div class ="profile-name">
         <span class ="bold">名前</span>：<%= @user.name %>
+      </div>
         <% if user_signed_in? %>
           <% if current_user != @user %><!--もしもcurrent_userが@userじゃなかったら-->
             <% if current_user.following?(@user) %><!--もしもフォローしてたら↓-->
@@ -29,7 +30,6 @@
           <%= link_to 'プロフィール編集', edit_user_path(@user) %>
           <% end %>
         <% end %>
-      </div>
       <% if @user.profile%>
       <div class ="profile-introduction">
         <span class ="bold">自己紹介</span>：<%= @user.profile %>
