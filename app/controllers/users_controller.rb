@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @recipes = @user.recipes.order('created_at DESC')
     @menus = Menu.all
     @menu = Menu.new
-    get_week
+    get_week(params[:beginning_of_week].to_date)
     @list = List.new
     favorites = Favorite.where(user_id: @user.id)
     @favorite_recipes = favorites.order('created_at DESC')
@@ -39,9 +39,9 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :profile)
   end
 
-  def get_week
+  def get_week(first_day = Date.today.beginning_of_week)
+    @first_day = first_day
     wdays = ['(月)', '(火)', '(水)', '(木)', '(金)', '(土)', '(日)']
-    @first_day = Date.today.beginning_of_week
 
     menus = Menu.where(user_id: @user.id, date: @first_day..@first_day + 6)
 

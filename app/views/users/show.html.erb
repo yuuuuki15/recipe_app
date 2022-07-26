@@ -39,27 +39,7 @@
   </div><!--mypage-top-->
   <div class ="mypage-middle">
   <% if current_user == User.find(params[:id])%>
-  <h1>献立表</h1>
-    <div class='calendar'>
-      <% @week_days.each do |day| %>
-        <div class='item'>
-          <div class='date'>
-            <%= day[:month] %>/<%= day[:date] %><%= day[:wday]%>
-          </div>
-          <div class ="menu-container">
-            <ul class ="menu-list">
-            <% day[:menu].each do |x|%>
-              <li>
-                <%= link_to x.recipe.title, recipe_path(x) %>
-                <%= link_to "➕", create_list_path(x.recipe), method: :post, class: "no-underline" %>
-                <%= link_to "❌", recipe_menu_path(x), method: :delete, class: "no-underline", class: "recipe-destroy", data: { confirm: '本当に削除しますか？' } %>
-              </li>
-            <% end %>
-            </ul>
-          </div>
-        </div>
-      <% end %>
-    </div><!--calender-->
+  <%= render "calendar" %>
   <% end %><!--献立表の表示領域if分-->
     <div class ="my-recipes">
       <h2>作ったレシピ</h2>
