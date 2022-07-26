@@ -32,6 +32,9 @@
             <%= link_to '買い物リスト', lists_path, class: "without-border" %>
           </li>
           <li class="nav-item">
+            <%= link_to 'マイフォルダ', favorites_path, class: "without-border" %>
+          </li>
+          <li class="nav-item">
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "without-border" %>
           </li>
         <% else %>

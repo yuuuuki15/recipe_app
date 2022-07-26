@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   patch 'lists/update', to: 'lists#update'
   patch 'lists/:id/check', to: 'lists#check', as: 'check'
   post '/lists', to: 'lists#create', as: 'create_list'
-  resources :favorites, only: [:create, :destroy]
+  resources :favorites, only: [:index, :create, :destroy]
 end

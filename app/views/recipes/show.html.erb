@@ -23,7 +23,7 @@
         </div><!--recipe-title-->
           <div class ="add-favorite">
           <% if user_signed_in? && !Favorite.exists?(user: current_user.id, recipe_id: @recipe.id)%>
-          <%= button_to 'お気に入り登録', favorites_path(@recipe), method: :post, class: "no-underline"%>
+          <%= button_to 'マイフォルダ', favorites_path(@recipe), method: :post, class: "no-underline"%>
           <% end %>
           </div>
           <div class ="button-wrapper">
