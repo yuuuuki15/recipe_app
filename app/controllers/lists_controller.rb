@@ -19,7 +19,7 @@ class ListsController < ApplicationController
       list.save
     end
     flash[:notice] = 'リストを追加しました'
-    redirect_to "/users/#{current_user.id}"
+    redirect_to user_path(current_user, beginning_of_week: Date.today.beginning_of_week)
   end
 
   def edit

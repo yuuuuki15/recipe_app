@@ -23,7 +23,7 @@ class MenusController < ApplicationController
     @menu = Menu.find(params[:recipe_id])
     @menu.destroy
     flash[:notice] = '献立を削除しました'
-    redirect_to ("/users/#{current_user.id}")
+    redirect_to user_path(current_user, beginning_of_week: Date.today.beginning_of_week)
   end
 
   private
