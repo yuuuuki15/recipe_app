@@ -56,7 +56,7 @@
           <div class ="recipe-title text-truncate">
             <%= link_to recipe.title, recipe_path(recipe) %>
           </div>
-          <p>by <%= link_to recipe.user.name, user_path(recipe.user), class: "text-truncate" %></p>
+          <p>by <%= link_to recipe.user.name, user_path(recipe.user, beginning_of_week: Date.today.beginning_of_week), class: "text-truncate" %></p>
           <div class ="recipe-method text-truncate">
             <span class ="bold">作り方：</span><%= recipe.descriptions.map { |description| description.text }.join(', ') %>
           </div>
@@ -84,7 +84,7 @@
             <%= link_to recipe.title, recipe_path(recipe) %>
             <%= link_to '削除', favorite_path(recipe), method: :delete %>
           </div>
-          <p>by <%= link_to recipe.user.name, user_path(recipe.user), class: "text-truncate" %></p>
+          <p>by <%= link_to recipe.user.name, user_path(recipe.user, beginning_of_week: Date.today.beginning_of_week), class: "text-truncate" %></p>
           <div class ="recipe-method text-truncate">
             <span class ="bold">作り方：</span><%= recipe.descriptions.map { |description| description.text }.join(', ') %>
           </div>

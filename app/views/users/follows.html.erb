@@ -1,4 +1,4 @@
 <h1>フォロー一覧</h1>
   <% @users.each do |user|%>
-    <%= link_to user.name, user %>
+    <%= link_to user.name, user_path(user, beginning_of_week: Date.today.beginning_of_week) %>
   <% end %>

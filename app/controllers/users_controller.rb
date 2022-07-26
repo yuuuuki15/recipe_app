@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to user_path(@user)
+    redirect_to user_path(@user, beginning_of_week: Date.today.beginning_of_week)
   end
 
   def follows
