@@ -1,0 +1,33 @@
+<div class ="recipe-index-container">
+  <div class ="recipe-index-left"></div>
+  <div class ="recipe-index-center">
+    <% @recipes.each do |recipe| %>
+    <div class ="recipe-box">
+      <div class ="recipe-box-left">
+        <% if recipe.image.attached? %>
+        <%= image_tag recipe.image, class:"recipe-image" %>
+        <% else %>
+          <%= image_tag 'test_image.png', class:"recipe-image" %>
+        <% end %>
+      </div><!--recipe-box-left-->
+      <div class ="recipe-box-right">
+        <div class ="recipe-title text-truncate">
+          <%= link_to recipe.title, recipe_path(recipe) %>
+        </div>
+        <p>by <%= link_to recipe.user.name, user_path(recipe.user, beginning_of_week: Date.today.beginning_of_week), class: "text-truncate" %></p>
+        <div class ="recipe-index-method text-truncate">
+          <span class ="bold">作り方：</span><%= recipe.descriptions.map { |description| description.text }.join(', ') %>
+        </div>
+        <div class ="recipe-index-ingredients text-truncate">
+          <span class ="bold">材料　：</span><%= recipe.ingredients.map { |ingredient| ingredient.name }.join(', ') %>
+        </div>
+      </div> <!--recipe-box-right-->
+    </div> <!--recipe-box-->
+    <% end %>
+    <div class ="pagination">
+    <%= paginate @recipes %>
+    </div>
+  </div>
+  <div class ="recipe-index-right">
+  </div>
+</div>
