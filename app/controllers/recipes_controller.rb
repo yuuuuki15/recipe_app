@@ -3,7 +3,6 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   before_action :redirect_to_root, only: [:edit, :update, :destroy]
   protect_from_forgery except: [:destroy]
-  before_action :set_q , only: [:index, :search]
 
   def index
     @recipes = if current_user
@@ -12,6 +11,7 @@ class RecipesController < ApplicationController
                else
                  Recipe.all.order('created_at DESC').where(public_id: 1).page(params[:page]).per(8)
                end
+    @q = Recipe.ransack(params[:q])
   end
 
   def new
@@ -55,6 +55,11 @@ class RecipesController < ApplicationController
   end
 
   def search
+    if params[:q]&.dig(:title)
+      squished_keywords = params[:q][:title].squish
+      params[:q][:title_cont_any] = squished_keywords.split(" ")
+    end
+    @q = Recipe.ransack(params[:q])
     @recipes = @q.result.page(params[:page]).per(8)
   end
 
@@ -72,9 +77,5 @@ class RecipesController < ApplicationController
 
   def redirect_to_root
     redirect_to root_path if @recipe.user_id != current_user.id
-  end
-
-  def set_q
-    @q = Recipe.ransack(params[:q])
   end
 end

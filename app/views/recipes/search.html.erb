@@ -2,7 +2,7 @@
   <div class ="recipe-index-left"></div>
   <div class ="recipe-index-center">
   <%= search_form_for Recipe.ransack(params[:q]), url: search_recipes_path, html: {class: "search-form"} do |f| %>
-      <%= f.text_field :title_cont, placeholder: 'レシピ名から探す', class: 'input-box' %>
+      <%= f.text_field :title, placeholder: 'レシピ名から探す', class: 'input-box', value: params[:q]&.dig(:title) %>
       <%= f.label :submit, class: "search-button" do %>
         <input type="submit" value="検索" class="send">
         <%= f.submit :submit, id: "q_submit", style: "display: none;"%>
