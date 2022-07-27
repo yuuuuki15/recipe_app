@@ -16,13 +16,17 @@
   <nav class="navbar navbar-light fixed-top">
     <!-- タイトル -->
     <a class="navbar-brand" href="/">Recipe_app</a>
+    <div class ="text-right">
     <% if user_signed_in? %>
-    <%= link_to 'レシピを投稿する', new_recipe_path%>
+    <div class ="new-recipe-box">
+    <%= link_to 'レシピを投稿する', new_recipe_path, class: "new-recipe-box-a" %>
+    </div>
     <% end %>
 <!-- ハンバーガーメニュー -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    </div>
     <!-- ナビゲーションメニュー -->
     <div class="collapse navbar-collapse" id="navbarNav">
     <div class = "card-container-body">

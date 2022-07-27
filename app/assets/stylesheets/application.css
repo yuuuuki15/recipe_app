@@ -49,10 +49,9 @@
   height: auto;
   width: 160px;
   margin-left: auto;
-  margin-top: 10px;
+  margin-top: 5px;
   padding: 20px;
-  border-radius: 20px;
-  background-color: rgba(200, 142, 60, 0.75);
+  background-color: white;
 }
 
 .without-border{
@@ -60,4 +59,28 @@
   color: black;
   font-weight: 500;
   font-size: 20px;
+}
+
+.new-recipe-box{
+  height: 80%;
+  width: 150px;
+  margin-right: 50px;
+  background-color: #6D9133;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-recipe-box-a{
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.text-right{
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
