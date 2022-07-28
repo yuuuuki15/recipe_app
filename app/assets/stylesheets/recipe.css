@@ -116,7 +116,7 @@
 }
 
 .add-favorite{
-  text-decoration: none;
+  margin-bottom: 20px;
 }
 
 .button-wrapper{
@@ -146,6 +146,7 @@
   font-size: 20px;
   font-weight: 600;
   text-decoration: none;
+  margin-right: 20px;
 }
 
 #calender-selection{
