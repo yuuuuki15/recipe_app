@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @recipes = Recipe.includes([:descriptions, :ingredients, :user, {image_attachment: :blob} ]).where(user_id: @user.id).order('created_at DESC')
     @menus = Menu.includes([:recipe])
     @menu = Menu.new
-    get_week(params[:beginning_of_week].to_date)
+    get_week(params[:beginning_of_week].to_date) if user_signed_in?
     @list = List.new
     favorites = Favorite.where(user_id: @user.id)
     @favorite_recipes = favorites.order('created_at DESC')
