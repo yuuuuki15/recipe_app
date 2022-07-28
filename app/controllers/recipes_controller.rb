@@ -6,10 +6,10 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = if current_user
-                 Recipe.all.order('created_at DESC').where(public_id: 1)
-                       .or(Recipe.all.order('created_at DESC').where(user_id: current_user.id)).page(params[:page]).per(8)
+                 Recipe.includes(:user, :descriptions, :ingredients, {image_attachment: :blob}).order('created_at DESC').where(public_id: 1)
+                       .or(Recipe.includes(:user, :descriptions, :ingredients, {image_attachment: :blob}).order('created_at DESC').where(user_id: current_user.id)).page(params[:page]).per(8)
                else
-                 Recipe.all.order('created_at DESC').where(public_id: 1).page(params[:page]).per(8)
+                 Recipe.includes(:user, :descriptions, :ingredients, {image_attachment: :blob}).order('created_at DESC').where(public_id: 1).page(params[:page]).per(8)
                end
     @q = Recipe.ransack(params[:q])
   end
@@ -33,6 +33,7 @@ class RecipesController < ApplicationController
   def show
     @menu = Menu.new
     @comment = Comment.new
+    @comments = Comment.includes([:user]).where(recipe_id: @recipe.id).order('created_at DESC')
     @descriptions = @recipe.descriptions.map { |description| description.text }
   end
 

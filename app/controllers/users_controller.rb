@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @recipes = @user.recipes.order('created_at DESC')
-    @menus = Menu.all
+    @recipes = Recipe.includes([:descriptions, :ingredients, :user, {image_attachment: :blob} ]).where(user_id: @user.id).order('created_at DESC')
+    @menus = Menu.includes([:recipe])
     @menu = Menu.new
     get_week(params[:beginning_of_week].to_date)
     @list = List.new
@@ -25,12 +25,12 @@ class UsersController < ApplicationController
 
   def follows
     user = User.find(params[:id])
-    @users = user.following_user
+    @users = User.includes([{image_attachment: :blob}]).where(id: user.following_user)
   end
 
   def followers
     user = User.find(params[:id])
-    @users = user.follower_user
+    @users = User.includes([{image_attachment: :blob}]).where(id: user.follower_user)
   end
 
   private
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
     @first_day = first_day
     wdays = ['(月)', '(火)', '(水)', '(木)', '(金)', '(土)', '(日)']
 
-    menus = Menu.where(user_id: @user.id, date: @first_day..@first_day + 6)
+    menus = Menu.includes([:recipe]).where(user_id: @user.id, date: @first_day..@first_day + 6)
 
     @week_days = []
     7.times do |x|

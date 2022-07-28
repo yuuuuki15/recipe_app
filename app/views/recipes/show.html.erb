@@ -93,11 +93,11 @@
       <% end %><!--comment-form-->
     </div><!--comment-container-->
     <% end %>
-    <% if @recipe.comments.any? %>
-      <% @recipe.comments.order("created_at DESC").each do |comment| %>
+    <% if @comments.any? %>
+      <% @comments.each do |comment| %>
         <div class ="comment-container">
           <div class ="comment-user">
-            <%= link_to comment.user.name, "/users/#{comment.user.id}" %>
+            <%= link_to comment.user.name, user_path(comment.user.id, beginning_of_week: Date.today.beginning_of_week) %>
           </div><!--comment-user-->
           <div class ="comment-content">
             <%= comment.content %>
