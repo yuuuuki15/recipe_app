@@ -44,7 +44,10 @@
               <% end %><!--if-->
           </div><!--button-wrapper-->
         <div class ="recipe-user"><!--レシピのユーザー-->
-          <%= link_to @recipe.user.name, "/users/#{@recipe.user.id}" %>
+          <% if @recipe.user.image.attached? %>
+          <%= image_tag @recipe.user.image, class:"small-user-image" %>
+        <% end %>
+          <%= link_to @recipe.user.name, user_path(@recipe.user, beginning_of_week: Date.today.beginning_of_week) %>
         </div><!--recipe-user-->
         <div class ="recipe-ingredients"><!--レシピの材料-->
         <!--材料と分量をグラフにして取り出す-->
