@@ -217,3 +217,14 @@
 .no-underline{
   text-decoration: none;
 }
+
+/*=============================
+フォロー画面
+==============================*/
+
+.follow-container{
+  margin-top: 60px;
+  height: calc(100vh - 60px);
+  width: 100vw;
+  background-color: rgba(248, 245, 227, 1);
+}

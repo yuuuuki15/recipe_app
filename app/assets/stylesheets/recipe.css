@@ -178,14 +178,24 @@
 }
 
 .comment-content{
-  height: 40px;
-  width: 300px;
+  height: auto;
+  width: auto;
 }
 
 .comment-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.no-comment{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
 }
 /*-----------------------------------------------------------------
 レシピ詳細とレシピ編集で共有したい部分
