@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :profile)
+    params.require(:user).permit(:name, :email, :profile, :image)
   end
 
   def get_week(first_day = Date.today.beginning_of_week)

@@ -44,7 +44,10 @@
               <% end %><!--if-->
           </div><!--button-wrapper-->
         <div class ="recipe-user"><!--レシピのユーザー-->
-          <%= link_to @recipe.user.name, "/users/#{@recipe.user.id}" %>
+          <% if @recipe.user.image.attached? %>
+          <%= image_tag @recipe.user.image, class:"small-user-image" %>
+        <% end %>
+          <%= link_to @recipe.user.name, user_path(@recipe.user, beginning_of_week: Date.today.beginning_of_week) %>
         </div><!--recipe-user-->
         <div class ="recipe-ingredients"><!--レシピの材料-->
         <!--材料と分量をグラフにして取り出す-->
@@ -90,18 +93,24 @@
       <% end %><!--comment-form-->
     </div><!--comment-container-->
     <% end %>
-    <% @recipe.comments.order("created_at DESC").each do |comment| %>
-      <div class ="comment-container">
-        <div class ="comment-user">
-          <%= link_to comment.user.name, "/users/#{comment.user.id}" %>
-        </div><!--comment-user-->
-        <div class ="comment-content">
-          <%= comment.content %>
-          <% if current_user == comment.user %>
-          <%= link_to "削除", "/recipes/#{@recipe.id}/comments/#{comment.id}", method: :delete%>
-          <% end %>
-        </div><!--comment-content-->
-      </div><!--comment-container-->
+    <% if @recipe.comments.any? %>
+      <% @recipe.comments.order("created_at DESC").each do |comment| %>
+        <div class ="comment-container">
+          <div class ="comment-user">
+            <%= link_to comment.user.name, "/users/#{comment.user.id}" %>
+          </div><!--comment-user-->
+          <div class ="comment-content">
+            <%= comment.content %>
+            <% if current_user == comment.user %>
+            <%= link_to "削除", "/recipes/#{@recipe.id}/comments/#{comment.id}", method: :delete%>
+            <% end %>
+          </div><!--comment-content-->
+        </div><!--comment-container-->
+      <% end %>
+    <% else %>
+      <div class="no-comment">
+        コメントはありません。
+      </div>
     <% end %>
     </div><!--recipe-bottom-->
   </div><!--recipe-center-->

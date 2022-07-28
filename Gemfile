@@ -39,6 +39,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'bullet'
 end
 
 group :development do
@@ -75,3 +76,4 @@ gem 'image_processing', '~> 1.2'
 gem 'cocoon'
 gem 'jquery-rails'
 gem 'kaminari'
+gem 'ransack'

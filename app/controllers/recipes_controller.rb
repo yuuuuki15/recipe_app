@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
                else
                  Recipe.all.order('created_at DESC').where(public_id: 1).page(params[:page]).per(8)
                end
+    @q = Recipe.ransack(params[:q])
   end
 
   def new
@@ -51,6 +52,15 @@ class RecipesController < ApplicationController
   def destroy
     @recipe.destroy
     redirect_to root_path
+  end
+
+  def search
+    if params[:q]&.dig(:title)
+      squished_keywords = params[:q][:title].squish
+      params[:q][:title_cont_any] = squished_keywords.split(" ")
+    end
+    @q = Recipe.ransack(params[:q])
+    @recipes = @q.result.page(params[:page]).per(8)
   end
 
   private

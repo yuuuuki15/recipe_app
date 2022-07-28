@@ -6,36 +6,48 @@
     </div>
   <div class ="mypage-top">
     <div class ="profile-container">
-      <div class ="profile-name">
-        <span class ="bold">名前</span>：<%= @user.name %>
+      <div class ="profile-container-left">
+      <% if @user.image.attached? %>
+        <%= image_tag @user.image, class:"user-image" %>
+        <% else %>
+          <%= image_tag 'login_user', class:"user-image" %>
+        <% end %>
       </div>
-        <% if user_signed_in? %>
-          <% if current_user != @user %><!--もしもcurrent_userが@userじゃなかったら-->
-            <% if current_user.following?(@user) %><!--もしもフォローしてたら↓-->
-              <%= link_to 'フォロー外す', user_relationships_path(@user.id), method: :delete %>
-            <% else %><!--もしもフォローしてなかったら↓-->
-              <%= link_to 'フォローする', "/users/#{@user.id}/relationships", method: :post %>
-            <% end %>
-          <% else %><!--もしもcurrent_user == @userだったら-->
-            <div class ="follow-follower">
-              <%= link_to follows_user_path(@user) do %>
-                <h6>フォロー<%= @following_users.count %></h6>
-              <% end %>
-              <%= link_to followers_user_path(@user) do %>
-                <h6>フォロワー<%= @follower_users.count %></h6>
+      <div class ="profile-container-right">
+        <div class ="profile-name">
+          <%= @user.name %>
+        </div>
+        <div class ="profile-follow-box">
+          <div class ="profile-introduction">
+            <%= @user&.profile %>
+          </div>
+          <% if user_signed_in? %>
+            <% if current_user != @user %><!--もしもcurrent_userが@userじゃなかったら-->
+            <div class ="send-follow">
+              <% if current_user.following?(@user) %><!--もしもフォローしてたら↓-->
+                <%= link_to 'フォロー外す', user_relationships_path(@user.id), method: :delete, class:"follow-button-font" %>
+              <% else %><!--もしもフォローしてなかったら↓-->
+                <%= link_to 'フォローする', "/users/#{@user.id}/relationships", method: :post, class:"follow-button-font" %>
               <% end %>
             </div>
+            <% end %>
           <% end %>
+        </div>
+        <div class ="follow-follower">
+          <%= link_to follows_user_path(@user), class:"no-underline" do %>
+            <h6>フォロー<%= @following_users.count %></h6>
+          <% end %>
+          <%= link_to followers_user_path(@user), class:"no-underline" do %>
+            <h6>フォロワー<%= @follower_users.count %></h6>
+          <% end %>
+          <div class ="edit-profile">
           <% if current_user == @user%>
-          <%= link_to 'プロフィール編集', edit_user_path(@user) %>
+          <%= link_to 'プロフィール編集', edit_user_path(@user), class:"no-underline" %>
           <% end %>
-        <% end %>
-      <% if @user.profile%>
-      <div class ="profile-introduction">
-        <span class ="bold">自己紹介</span>：<%= @user.profile %>
-      </div>
-      <% end %>
-    </div>
+          </div>
+        </div>
+      </div><!--profile-container-right-->
+    </div><!--profile-container-left-->
   </div><!--mypage-top-->
   <div class ="mypage-middle">
   <% if current_user == User.find(params[:id])%>

@@ -1,6 +1,5 @@
 <div class ="recipe-index-container">
-  <div class ="recipe-index-left">
-  </div>
+  <div class ="recipe-index-left"></div>
   <div class ="recipe-index-center">
   <%= search_form_for Recipe.ransack(params[:q]), url: search_recipes_path, html: {class: "search-form"} do |f| %>
       <%= f.text_field :title, placeholder: 'レシピ名から探す', class: 'input-box', value: params[:q]&.dig(:title) %>

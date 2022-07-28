@@ -6,6 +6,10 @@
       <%= f.text_field :name %>
       <%= f.label :profile %>
       <%= f.text_area :profile %>
+      <div id="previews"></div>
+      <label class ="image-label">
+          <%= f.file_field :image, id:"item-image" %>ファイルを選択
+          </label>
       <%= f.submit %>
       <% end %>
   </div>

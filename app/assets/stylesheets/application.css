@@ -49,10 +49,9 @@
   height: auto;
   width: 160px;
   margin-left: auto;
-  margin-top: 10px;
+  margin-top: 5px;
   padding: 20px;
-  border-radius: 20px;
-  background-color: rgba(200, 142, 60, 0.75);
+  background-color: white;
 }
 
 .without-border{
@@ -60,4 +59,82 @@
   color: black;
   font-weight: 500;
   font-size: 20px;
+}
+
+.new-recipe-box{
+  height: 80%;
+  width: 150px;
+  margin-right: 50px;
+  background-color: #6D9133;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-recipe-box-a{
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.text-right{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header-mypage{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.header-user-image{
+  margin-right: 20px;
+}
+
+.header-myfolder{
+  margin-right: 20px;
+  height: 80%;
+  width: 150px;
+  background-color: #e0dbc8;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-shopping-list{
+  margin-right: 20px;
+  height: 80%;
+  width: 150px;
+  background-color: #e0dbc8;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myfolder-a{
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.shopping-list-a{
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.cart-image{
+  height: 30px;
+  width: 30px;
+}
+
+.recipe-book-image{
+  height: 30px;
+  width: 30px;
 }

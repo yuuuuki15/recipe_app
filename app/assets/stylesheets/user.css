@@ -109,16 +109,72 @@
 }
 
 .profile-container{
-  padding-top: 30px;
-  width: 250px;
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.profile-container-left{
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 30px;
+}
+
+.profile-container-right{
+  width: 55%;
   display: flex;
   flex-direction: column;
+}
+
+.user-image{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: solid 2px #31912a;
+}
+
+.profile-name{
+  width: 80%;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px ridge grey;
+}
+
+.profile-follow-box{
+  display: flex;
+}
+
+.profile-introduction{
+  width: 60%;
+  height: 74px;
+}
+
+.send-follow{
+  height: 30px;
+  width: 120px;
+  background-color: #66ccff;
+  border-radius: 15px;
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.follow-button-font{
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: inset;
 }
 
 .follow-follower{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .calendar{
@@ -160,4 +216,30 @@
 
 .no-underline{
   text-decoration: none;
+}
+
+/*=============================
+フォロー画面
+==============================*/
+
+.follow-container{
+  margin-top: 60px;
+  padding: 0 30px;
+  height: calc(100vh - 60px);
+  width: 100vw;
+  background-color: rgba(248, 245, 227, 1);
+}
+
+.follow-wrapper{
+  display: flex;
+  overflow: wrap;
+}
+
+.follow-box{
+  margin-right: 30px;
+}
+
+.follow-user-name{
+  display: flex;
+  justify-content: center;
 }
