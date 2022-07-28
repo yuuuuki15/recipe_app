@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
-  before_action :redirect_to_root, only: [:edit, :update]
+  before_action :redirect_to_root, only: [:edit, :update, :destroy]
   protect_from_forgery except: [:destroy]
 
   def index

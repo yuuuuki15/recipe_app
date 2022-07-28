@@ -31,7 +31,6 @@
             <%= button_to '編集', edit_recipe_path, method: :get, class: "recipe-edit"%>
             <%= button_to "削除", "/recipes/#{@recipe.id}", method: :delete, class: "recipe-destroy", data: { confirm: '本当に削除しますか？' } %>
             <% end %>
-            <%= button_to "削除", "/recipes/#{@recipe.id}", method: :delete, class: "recipe-destroy", data: { confirm: '本当に削除しますか？' } %>
               <% if user_signed_in?%>
               <div class ="add-menu-container">
                 <button id ="pull-down">献立追加</button>
