@@ -1,6 +1,21 @@
 <div class ="follow-container">
-<h1>フォロー一覧</h1>
+  <h1>フォロー一覧</h1>
+  <div class ="follow-wrapper">
   <% @users.each do |user|%>
-    <%= link_to user.name, user_path(user, beginning_of_week: Date.today.beginning_of_week) %>
+  <%= link_to user_path(user, beginning_of_week: Date.today.beginning_of_week) do %>
+    <div class ="follow-box">
+      <div class ="follow-user-image">
+        <% if user.image.attached? %>
+          <%= image_tag(user.image, class: "user-image")%>
+        <% else %>
+          <%= image_tag('login_user', class: "user-image")%>
+        <% end %>
+      </div>
+      <div class ="follow-user-name">
+        <%= user.name%>
+      </div>
+    </div><!--follow-box-->
   <% end %>
+  <% end %>
+  </div><!--follow-wrapper-->
 </div>
