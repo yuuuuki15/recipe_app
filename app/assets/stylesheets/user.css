@@ -243,3 +243,40 @@
   display: flex;
   justify-content: center;
 }
+
+/*=============================
+プロフィール編集画面
+==============================*/
+
+.edit-profile-wrapper{
+  background-color: rgba(248, 245, 227, 1);
+  height: calc(100vh - 60px);
+  width: 100vw;
+  margin-top: 60px;
+}
+
+.edit-profile-container{
+  display: flex;
+  padding-top: 30px;
+}
+
+.edit-profile-profile{
+  height: 74px;
+  width: 300px;
+}
+
+.edit-profile-container-left{
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 30px;
+}
+
+.edit-profile-submit{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

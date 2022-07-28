@@ -1,16 +1,24 @@
-<div class ="mypage-container">
-  <div class ="edit-profile-container">
-    <h1>プロフィール編集</h1>
-    <%= form_for @user do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-      <%= f.label :profile %>
-      <%= f.text_area :profile %>
-      <div id="previews"></div>
-      <label class ="image-label">
-          <%= f.file_field :image, id:"item-image" %>ファイルを選択
-          </label>
-      <%= f.submit %>
-      <% end %>
+<div class ="edit-profile-wrapper">
+<%= form_for @user do |f|%>
+<div class ="edit-profile-container">
+  <div class ="edit-profile-container-left">
+    <div id= "previews">
+    </div>
+    <label class ="image-label">
+      <%= f.file_field :image, id:"item-image", class: "edit-profile-image" %>ファイルを選択
+    </label>
   </div>
+  <div class ="profile-container-right">
+    <div class ="profile-name">
+       <%= f.text_field :name, class: "edit-profile-name", value: @user.name %>
+    </div>
+    <div class ="profile-introduction">
+      <%= f.label :profile%>
+      <%= f.text_area :profile, class: "edit-profile-profile", value: @user.profile %>
+    </div>
+  </div>
+</div>
+<div class ="edit-profile-submit">
+  <%= f.submit %>
+<% end %>
 </div>
