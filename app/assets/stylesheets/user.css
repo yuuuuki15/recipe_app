@@ -109,23 +109,72 @@
 }
 
 .profile-container{
-  padding-top: 30px;
-  width: 250px;
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.profile-container-left{
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 30px;
+}
+
+.profile-container-right{
+  width: 55%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .user-image{
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
-  
+  object-fit: cover;
+  border: solid 2px #31912a;
+}
+
+.profile-name{
+  width: 80%;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px ridge grey;
+}
+
+.profile-follow-box{
+  display: flex;
+}
+
+.profile-introduction{
+  width: 60%;
+  height: 74px;
+}
+
+.send-follow{
+  height: 30px;
+  width: 120px;
+  background-color: #66ccff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.follow-button-font{
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: inset;
 }
 
 .follow-follower{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .calendar{
