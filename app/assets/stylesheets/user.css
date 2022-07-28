@@ -224,7 +224,22 @@
 
 .follow-container{
   margin-top: 60px;
+  padding: 0 30px;
   height: calc(100vh - 60px);
   width: 100vw;
   background-color: rgba(248, 245, 227, 1);
+}
+
+.follow-wrapper{
+  display: flex;
+  overflow: wrap;
+}
+
+.follow-box{
+  margin-right: 30px;
+}
+
+.follow-user-name{
+  display: flex;
+  justify-content: center;
 }

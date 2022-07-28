@@ -1,6 +1,7 @@
 <div class = "mypage-container">
   <div class ="favorite-recipe">
       <h2>マイフォルダ</h2>
+      <% if @favorite_recipes.any? %>
       <% @favorite_recipes.each do |recipe|%>
         <div class ="recipe-box">
         <div class ="recipe-box-left">
@@ -23,6 +24,11 @@
             <span class ="bold">材料　：</span><%= recipe.ingredients.map { |ingredient| ingredient.name }.join(', ') %>
           </div>
         </div>
+      </div>
+      <% end %>
+      <% else %>
+      <div class ="no-favorite">
+        <p>マイフォルダにはまだレシピがありません</p>
       </div>
       <% end %>
     <div><!--favorite-recipe-->
