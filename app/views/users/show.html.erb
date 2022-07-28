@@ -6,6 +6,11 @@
     </div>
   <div class ="mypage-top">
     <div class ="profile-container">
+      <% if @user.image.attached? %>
+        <%= image_tag @user.image, class:"user-image" %>
+        <% else %>
+          <%= image_tag 'test_image.png', class:"recipe-image" %>
+        <% end %>
       <div class ="profile-name">
         <span class ="bold">名前</span>：<%= @user.name %>
       </div>
