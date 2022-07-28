@@ -84,3 +84,57 @@
   display: flex;
   align-items: center;
 }
+
+.header-mypage{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.header-user-image{
+  margin-right: 20px;
+}
+
+.header-myfolder{
+  margin-right: 20px;
+  height: 80%;
+  width: 150px;
+  background-color: #e0dbc8;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-shopping-list{
+  margin-right: 20px;
+  height: 80%;
+  width: 150px;
+  background-color: #e0dbc8;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myfolder-a{
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.shopping-list-a{
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.cart-image{
+  height: 30px;
+  width: 30px;
+}
+
+.recipe-book-image{
+  height: 30px;
+  width: 30px;
+}

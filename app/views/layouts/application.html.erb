@@ -18,8 +18,21 @@
     <a class="navbar-brand" href="/">Recipe_app</a>
     <div class ="text-right">
     <% if user_signed_in? %>
+    <div class="header-shopping-list">
+      <%= link_to image_tag('cart_icon_160296', class: "cart-image") + " 買い物リスト", lists_path, class: "shopping-list-a" %>
+    </div>
+    <div class ="header-myfolder">
+      <%= link_to image_tag('recipe_book', class: "recipe-book-image") + ' マイフォルダ', favorites_path, class: "myfolder-a" %>
+    </div>
     <div class ="new-recipe-box">
     <%= link_to 'レシピを投稿する', new_recipe_path, class: "new-recipe-box-a" %>
+    </div>
+    <div class ="header-user-image">
+      <% if current_user.image %>
+        <%= link_to image_tag(current_user.image, class: "header-mypage"), user_path(current_user, beginning_of_week: Date.today.beginning_of_week) %>
+      <% else %>
+        <%= link_to image_tag('login_user.png', class: "header-mypage"), user_path(current_user, beginning_of_week: Date.today.beginning_of_week) %>
+      <% end %>
     </div>
     <% end %>
 <!-- ハンバーガーメニュー -->
@@ -32,15 +45,6 @@
     <div class = "card-container-body">
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to 'マイページ', user_path(current_user, beginning_of_week: Date.today.beginning_of_week), class: "without-border" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to '買い物リスト', lists_path, class: "without-border" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'マイフォルダ', favorites_path, class: "without-border" %>
-          </li>
           <li class="nav-item">
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "without-border" %>
           </li>
