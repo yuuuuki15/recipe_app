@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   patch 'lists/:id/check', to: 'lists#check', as: 'check'
   post '/lists', to: 'lists#create', as: 'create_list'
   resources :favorites, only: [:index, :create, :destroy]
+
+  post '/guests/guest_sign_in', to: 'guests#new_guest'
 end
