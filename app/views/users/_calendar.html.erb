@@ -19,6 +19,8 @@
         </div>
       <% end %>
     </div><!--calender-->
+    <div class ="weeks-container">
       <%= link_to "先週分", user_path(@user, beginning_of_week: Date.today.beginning_of_week - 7.days) %>
       <%= link_to "今週分", user_path(@user, beginning_of_week: Date.today.beginning_of_week) %>
-  <%= link_to "来週分", user_path(@user, beginning_of_week: Date.today.beginning_of_week + 7.days) %>
+      <%= link_to "来週分", user_path(@user, beginning_of_week: Date.today.beginning_of_week + 7.days) %>
+    </div>
