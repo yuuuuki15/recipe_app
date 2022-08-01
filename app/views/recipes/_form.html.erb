@@ -47,9 +47,17 @@
         <%= f.text_field :tip, class: "form-control" %>
       </div><!--form-main-->
       <div class ="form-switch">
-        <%= f.check_box :public_id, class: "form-check-input", checked: false %>
-        <%= f.label :一般公開, class:"bold" %><br \>
+        <%= f.check_box :public_id, class: "btn-check", checked: true %>
+        <%= f.label :public_id, "公開", class: "btn btn-primary", id: "public_id_label", style: "width:5rem" %><br \>
         <p>一般公開すると、他のユーザーがこのレシピを見ることができるようになります。</p>
+
+<script>
+(function() {
+  document.getElementById('recipe_public_id').addEventListener('click', function(e) {
+    document.getElementById('public_id_label').innerText = this.checked ? "公開" : "非公開";
+  });
+})();
+</script>
       </div><!--form-switch-->
       <div class ="form-main">
         <div class ="form-submit">
