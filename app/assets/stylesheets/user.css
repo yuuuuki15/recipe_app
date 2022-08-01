@@ -209,10 +209,12 @@
   height: 80%;
   width: 100%;
   border: 1px solid black;
+  overflow: scroll;
 }
 
 .menu-list{
   list-style: none;
+  padding: 5px;
 }
 
 .no-underline{
