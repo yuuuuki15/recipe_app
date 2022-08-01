@@ -35,9 +35,9 @@
               <div class ="add-menu-container">
                 <button id ="pull-down">献立追加</button>
                 <div id ="calender-selection">
-                  <%= form_with model: @menu,url: recipe_menus_path(@recipe), method: :post, local: true do |f|%>
-                  <%= f.date_field :date, class:"date-form" %>
-                  <p><%= f.submit "追加する",class: "btn btn-primary" %></p>
+                  <%= form_with model: @menu,url: recipe_menus_path(@recipe), method: :post, id: "calender-form", local: true do |f|%>
+                  <%= f.date_field :date %>
+                  <p><%= f.submit "追加する",class: "btn btn-primary", id: "calender-submit-button" %></p>
                   <% end %><!--kondate-form-->
                 </div><!--calender-selection-->
               </div><!--add-menu-container-->

@@ -29,9 +29,9 @@
     </div>
     <div class ="header-user-image">
       <% if current_user.image.attached? %>
-        <%= link_to image_tag(current_user.image, class: "header-mypage"), user_path(current_user, beginning_of_week: Date.today.beginning_of_week) %>
+        <%= link_to image_tag(current_user.image, id: "header-mypage"), user_path(current_user, beginning_of_week: Date.today.beginning_of_week) %>
       <% else %>
-        <%= link_to image_tag('login_user.png', class: "header-mypage"), user_path(current_user, beginning_of_week: Date.today.beginning_of_week) %>
+        <%= link_to image_tag('login_user.png', id: "header-mypage"), user_path(current_user, beginning_of_week: Date.today.beginning_of_week) %>
       <% end %>
     </div>
     <% end %>

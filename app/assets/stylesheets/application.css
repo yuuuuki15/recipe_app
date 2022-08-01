@@ -89,7 +89,7 @@
   align-items: center;
 }
 
-.header-mypage{
+#header-mypage{
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -97,6 +97,11 @@
 
 .header-user-image{
   margin-right: 20px;
+}
+
+.active{
+  /*飛び跳ねるアニメーションを追加する*/
+  animation: cubic-bezier(0.075, 0.82, 0.165, 1)
 }
 
 .header-myfolder{
