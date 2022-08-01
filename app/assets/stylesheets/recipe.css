@@ -338,3 +338,10 @@ input[type="file"] {
   top: 0px;
   left: 0px;
 }
+
+.favorites-container{
+  height: calc(100vh - 60px);
+  width: 100vw;
+  background-color: rgba(248, 245, 227, 1);
+  margin-top: 60px;
+}

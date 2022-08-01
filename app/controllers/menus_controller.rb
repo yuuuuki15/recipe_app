@@ -12,10 +12,10 @@ class MenusController < ApplicationController
       return redirect_to recipe_path(@recipe)
     end
       flash[:notice] = '献立を追加しました'
-      redirect_to("/recipes/#{@recipe.id}")
+      redirect_to user_path(current_user, beginning_of_week: Date.today.beginning_of_week)
     else
       flash[:alert] = '献立を追加できませんでした'
-      redirect_to("/recipes/#{@recipe.id}")
+      redirect_to recipe_path(@recipe)
     end
   end
 
