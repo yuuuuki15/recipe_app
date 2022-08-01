@@ -51,10 +51,11 @@
   </div><!--mypage-top-->
   <div class ="mypage-middle">
   <% if current_user == User.find(params[:id])%>
+  <h3 class ="mypage-title">献立表</h3>
   <%= render "calendar" %>
   <% end %><!--献立表の表示領域if分-->
     <div class ="my-recipes">
-      <h2>作ったレシピ</h2>
+      <h3 class ="mypage-title">作ったレシピ</h3>
       <% @recipes.each do |recipe| %>
       <div class ="recipe-box">
         <div class ="recipe-box-left">
