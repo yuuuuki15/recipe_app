@@ -24,7 +24,7 @@ class ListsController < ApplicationController
 
   def edit
     @user = User.find(current_user.id)
-    @lists = @user.lists.order(:ingredient_name)
+    # @user.lists = @user.lists.order(ingredient_name: "DESC")
   end
 
   def update

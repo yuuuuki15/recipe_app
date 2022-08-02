@@ -4,7 +4,7 @@
 <%= form_with  model: @user, url: "update", local: true do |f| %>
 <%= render 'devise/shared/error_messages', model: f.object %>
   <div id ="lists">
-    <span class ="bold">　　　　材料　　　　　　　</span><span class="bold">分量</span>
+    <span class ="bold">　　　　材料　　　　　　　　　　</span><span class="bold">分量</span>
     <%= f.fields_for :lists do |list|%>
     <%= render 'list_fields', :f => list%>
     <% end %>
