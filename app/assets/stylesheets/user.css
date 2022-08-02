@@ -234,6 +234,16 @@
   margin-left: 4.5%;
 }
 
+.user-recipe-method{
+  width: 80%;
+  margin-top: 10px;
+}
+
+.user-recipe-ingredients{
+  width: 80%;
+  margin-top: 10px;
+}
+
 /*=============================
 フォロー画面
 ==============================*/
