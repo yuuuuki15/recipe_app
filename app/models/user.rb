@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   has_many :recipes, dependent: :destroy
   has_many :menus, dependent: :destroy
-  has_many :lists, dependent: :destroy
+  has_many :lists, dependent: :destroy, inverse_of: :user
+  accepts_nested_attributes_for :lists, reject_if: :all_blank, allow_destroy: true
   has_many :comments
   has_many :favorites, dependent: :destroy
   has_many :follower, class_name: 'Relationship', foreign_key: 'follower_id', dependent: :destroy

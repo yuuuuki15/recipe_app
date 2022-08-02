@@ -23,7 +23,17 @@ class ListsController < ApplicationController
   end
 
   def edit
-    @list = List.find(params[:id])
+    @user = User.find(current_user.id)
+    @lists = @user.lists.order(:ingredient_name)
+  end
+
+  def update
+    @user = User.find(current_user.id)
+    if @user.update(edit_list_params)
+      redirect_to lists_path
+    else
+      render :index
+    end
   end
 
   def destroy
@@ -41,20 +51,13 @@ class ListsController < ApplicationController
     end
   end
 
-  def edit
-    @user = User.find(current_user.id)
-    @lists = @user.lists.order(:ingredient_name)
-  end
-
-  def update
-    binding.pry
-    @list = List.find(params[:id])
-    @list.update(list_params)
-  end
-
   private
 
   def list_params
     params.require(:list).permit(:ingredient_name, :ingredient_quantity, :user_id)
+  end
+
+  def edit_list_params
+    params.require(:user).permit(lists_attributes: [:id, :ingredient_name, :ingredient_quantity, :_destroy],)
   end
 end
