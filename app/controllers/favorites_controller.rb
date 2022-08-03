@@ -30,7 +30,7 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.find_by(user_id: current_user.id, recipe_id: @recipe.id)
     @favorite.destroy
     flash[:notice] = 'マイフォルダから削除しました'
-    redirect_to user_path(current_user.id)
+    redirect_to favorites_path
   end
 
   private

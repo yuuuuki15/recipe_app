@@ -1,19 +1,17 @@
 <div class="lists-container">
-
-
-<%= form_with  model: @user, url: "update", local: true do |f| %>
-<%= render 'devise/shared/error_messages', model: f.object %>
-  <div id ="lists">
-    <span class ="bold">　　　　材料　　　　　　　　　　</span><span class="bold">分量</span>
-    <%= f.fields_for :lists do |list|%>
-    <%= render 'list_fields', :f => list%>
+  <div class ="lists-box">
+    <%= form_with  model: @user, url: "update", local: true do |f| %>
+    <%= render 'devise/shared/error_messages', model: f.object %>
+      <div id ="lists">
+        <span class ="bold">　　　　材料　　　　　　　　　　</span><span class="bold">分量</span>
+        <%= f.fields_for :lists do |list|%>
+        <%= render 'list_fields', :f => list%>
+        <% end %>
+        <div class ="links">
+          <%= link_to_add_association '追加', f, :lists %>
+        </div>
+      </div> <!--lists-->
+      <%= f.submit "更新",class: "btn btn-primary" %>
     <% end %>
-    <div class ="links">
-      <%= link_to_add_association '追加', f, :lists %>
-    </div>
-  </div> <!--lists-->
-  <%= f.submit "更新",class: "btn btn-primary" %>
-<% end %>
-
-
+  </div>
 </div><!--lists-container-->
