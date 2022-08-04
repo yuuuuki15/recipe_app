@@ -154,6 +154,7 @@
 .profile-introduction{
   width: 60%;
   height: 74px;
+  overflow: scroll;
 }
 
 .send-follow{
@@ -312,7 +313,7 @@
   .mypage-middle{
     margin-top: 20px;
   }
-  
+
   .calendar{
     flex-wrap: wrap;
     height: auto;

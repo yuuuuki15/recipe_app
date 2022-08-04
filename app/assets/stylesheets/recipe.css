@@ -421,4 +421,28 @@ input[type="file"] {
     display: flex;
     justify-content: space-evenly;
   }
+
+  .img-upload{
+    padding-left: 0px;
+  }
+
+  .recipe-top-right{
+    margin-top: 20px;
+  }
+
+  .nested-fields{
+    display: flex;
+    justify-content: center;
+  }
+
+  .text-form{
+    height: 100px;
+    width: 100%;
+  }
+
+  .form-switch{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
