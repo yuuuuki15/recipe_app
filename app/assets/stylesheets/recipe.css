@@ -75,6 +75,24 @@
   margin: 30px auto 10px;
 }
 
+@media screen and (max-width: 599px) {
+  .recipe-index-container{
+    width: 100vw;
+  }
+
+  .recipe-index-left{
+    display: hidden;
+  }
+
+  .recipe-index-right{
+    display: hidden;
+  }
+
+  .recipe-index-center{
+    width: 100vw;
+  }
+}
+
 /*-----------------------------------------------------------------
 レシピ詳細画面
 ------------------------------------------------------------------*/
@@ -344,4 +362,58 @@ input[type="file"] {
   width: 100vw;
   background-color: rgba(248, 245, 227, 1);
   margin-top: 60px;
+}
+
+@media screen and (max-width: 599px) {
+  .recipe-top{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .recipe-top-left{
+  width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .recipe-top-right{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .show-recipe-image{
+    height: 300px;
+    width: 300px;
+    margin: auto;
+  }
+
+  .recipe-user{
+    height: 30px;
+    margin-top: 15px;
+  }
+
+  .small-user-image{
+    height: 30px;
+    width: 30px;
+  }
+
+  .recipe-method{
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+
+  .text-form-show{
+    margin: 10px;
+    width: 40%;
+  }
+
+  .recipe-tip{
+    margin: 15px 0px;
+  }
 }
