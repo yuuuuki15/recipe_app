@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @recipes = Recipe.includes([:descriptions, :ingredients, :user, {image_attachment: :blob} ]).where(user_id: @user.id).order('created_at DESC')
+    @recipes = if current_user
+                Recipe.includes(:user, :descriptions, :ingredients, {image_attachment: :blob}).order('created_at DESC').where(public_id: 1)
+                      .or(Recipe.includes(:user, :descriptions, :ingredients, {image_attachment: :blob}).order('created_at DESC').where(user_id: current_user.id))
+              else
+                Recipe.includes(:user, :descriptions, :ingredients, {image_attachment: :blob}).order('created_at DESC').where(public_id: 1)
+              end
     @menus = Menu.includes([:recipe])
     @menu = Menu.new
     get_week(params[:beginning_of_week].to_date) if user_signed_in?
