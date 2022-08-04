@@ -40,11 +40,11 @@
           <%= link_to followers_user_path(@user), class:"no-underline" do %>
             <h6>フォロワー<%= @follower_users.count %></h6>
           <% end %>
-          <div class ="edit-profile">
+        </div>
+        <div class ="edit-profile">
           <% if current_user == @user%>
           <%= link_to 'プロフィール編集', edit_user_path(@user), class:"no-underline" %>
           <% end %>
-          </div>
         </div>
       </div><!--profile-container-right-->
     </div><!--profile-container-left-->

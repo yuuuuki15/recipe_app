@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @recipes = if current_user
-                Recipe.includes(:user, :descriptions, :ingredients, {image_attachment: :blob}).order('created_at DESC').where(public_id: 1)
-                      .or(Recipe.includes(:user, :descriptions, :ingredients, {image_attachment: :blob}).order('created_at DESC').where(user_id: current_user.id))
+    @recipes = if current_user == @user
+                Recipe.includes(:user, :descriptions, :ingredients, {image_attachment: :blob}).order('created_at DESC').where(user_id: current_user.id)
               else
-                Recipe.includes(:user, :descriptions, :ingredients, {image_attachment: :blob}).order('created_at DESC').where(public_id: 1)
+                Recipe.includes(:user, :descriptions, :ingredients, {image_attachment: :blob}).order('created_at DESC').where( public_id: 1 ).where(user_id: @user.id)
               end
     @menus = Menu.includes([:recipe])
     @menu = Menu.new

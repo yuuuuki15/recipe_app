@@ -107,7 +107,7 @@
 .mypage-top{
   display: flex;
   justify-content: center;
-  height: 200px;
+  height: auto;
 }
 
 .profile-container{
@@ -154,6 +154,7 @@
 .profile-introduction{
   width: 60%;
   height: 74px;
+  overflow: scroll;
 }
 
 .send-follow{
@@ -176,7 +177,8 @@
 
 .follow-follower{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 200px;
 }
 
 .calendar{
@@ -305,4 +307,62 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.profile-introduction{
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 599px) {
+  .mypage-middle{
+    margin-top: 20px;
+  }
+
+  .calendar{
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .item{
+    width: 120px;
+  }
+
+  .edit-profile-container{
+    width: auto;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .edit-profile-container-left{
+    width: 100vw;
+    height: 350px;
+  }
+
+  .profile-container-right{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .profile-name{
+    width: 100vw;
+  }
+
+  .edit-profile-name{
+    margin-top: 20px;
+  }
+
+  .profile-introduction{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .edit-profile-profile{
+    width: 80vw;
+    margin: auto;
+  }
 }

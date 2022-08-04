@@ -147,3 +147,38 @@
   height: 30px;
   width: 30px;
 }
+
+.hidden{
+  display: none;
+}
+
+@media screen and (max-width: 599px) {
+  .header-user-image{
+    margin-right: 5px;
+  }
+
+  .header-myfolder{
+    margin-right: 10px;
+    width: auto;
+  }
+
+  .header-shopping-list{
+    margin-right: 10px;
+    width: auto;
+  }
+
+  .new-recipe-box{
+    margin-right: 10px;
+    width: auto;
+    display: none;
+  }
+
+  .text-right{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .hidden{
+    display: block;
+  }
+}
