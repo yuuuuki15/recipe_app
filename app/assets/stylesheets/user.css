@@ -309,6 +309,11 @@
   align-items: center;
 }
 
+.profile-introduction{
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 599px) {
   .mypage-middle{
     margin-top: 20px;
@@ -321,5 +326,43 @@
 
   .item{
     width: 120px;
+  }
+
+  .edit-profile-container{
+    width: auto;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .edit-profile-container-left{
+    width: 100vw;
+    height: 350px;
+  }
+
+  .profile-container-right{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .profile-name{
+    width: 100vw;
+  }
+
+  .edit-profile-name{
+    margin-top: 20px;
+  }
+
+  .profile-introduction{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .edit-profile-profile{
+    width: 80vw;
+    margin: auto;
   }
 }
