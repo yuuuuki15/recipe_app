@@ -49,6 +49,9 @@
           <li class="nav-item">
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "without-border" %>
           </li>
+          <li>
+            <%= link_to 'レシピを投稿する', new_recipe_path, class: "without-border hidden" %>
+          </li>
         <% else %>
           <li class="nav-item">
             <%= link_to "新規登録", new_user_registration_path, class: "without-border" %>

@@ -416,4 +416,9 @@ input[type="file"] {
   .recipe-tip{
     margin: 15px 0px;
   }
+
+  .button-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+  }
 }

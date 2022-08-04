@@ -148,6 +148,10 @@
   width: 30px;
 }
 
+.hidden{
+  display: none;
+}
+
 @media screen and (max-width: 599px) {
   .header-user-image{
     margin-right: 5px;
@@ -166,15 +170,19 @@
   .new-recipe-box{
     margin-right: 10px;
     width: auto;
-  }
-
-  .navbar-brand{
     display: none;
   }
 
+  .navbar-brand{
+    /* display: none; */
+  }
+
   .text-right{
-    width: 100%;
     display: flex;
     justify-content: space-around;
+  }
+
+  .hidden{
+    display: block;
   }
 }
