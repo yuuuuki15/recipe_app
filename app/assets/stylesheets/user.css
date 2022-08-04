@@ -107,7 +107,7 @@
 .mypage-top{
   display: flex;
   justify-content: center;
-  height: 200px;
+  height: auto;
 }
 
 .profile-container{
@@ -306,4 +306,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 599px) {
+  .mypage-middle{
+    margin-top: 20px;
+  }
+  
+  .calendar{
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .item{
+    width: 120px;
+  }
 }

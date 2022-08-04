@@ -173,10 +173,6 @@
     display: none;
   }
 
-  .navbar-brand{
-    /* display: none; */
-  }
-
   .text-right{
     display: flex;
     justify-content: space-around;
