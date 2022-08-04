@@ -2,6 +2,18 @@
   margin-top: 60px;
   height: calc(100vh - 60px);
   background-color: rgba(248, 245, 227, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lists-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 30px;
+  text-align: center;
 }
 
 .lists-box{
