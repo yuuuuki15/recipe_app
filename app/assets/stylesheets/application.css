@@ -182,3 +182,13 @@
     display: block;
   }
 }
+
+@media(max-width: 500px){
+  .header-myfolder{
+    display: none;
+  }
+
+  .header-shopping-list{
+    display: none;
+  }
+}

@@ -46,11 +46,17 @@
     <div class = "card-container-body">
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "without-border" %>
-          </li>
           <li>
             <%= link_to 'レシピを投稿する', new_recipe_path, class: "without-border hidden" %>
+          </li>
+          <li>
+            <%= link_to 'マイフォルダ', favorites_path, class: "without-border hidden" %>
+          </li>
+          <li>
+            <%= link_to '買い物リスト', lists_path, class: "without-border hidden" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "without-border" %>
           </li>
         <% else %>
           <li class="nav-item">
