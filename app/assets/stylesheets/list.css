@@ -41,3 +41,31 @@
 .list-right{
   width: 300px;
 }
+
+@media(max-width:500px){
+  .lists-box{
+    width: 100vw;
+  }
+
+  .list-left{
+    width: 70%;
+  }
+
+  .list-right{
+    width: 30%;
+  }
+
+  table{
+    width: 90vw;
+    margin: auto;
+  }
+
+  #update{
+    width: 100%;
+  }
+
+  .list-box{
+    font-size: 15px;
+    
+  }
+}
