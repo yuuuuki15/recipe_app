@@ -270,6 +270,10 @@
 ------------------------------------------------------------------*/
 .recipe-top-left{
   width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .recipe-top-right{
@@ -290,7 +294,7 @@
   border-radius: 30px;
 }
 .img-upload{
-  padding-left: 50px;
+
 }
 
 .image-label {
