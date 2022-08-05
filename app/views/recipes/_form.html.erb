@@ -22,7 +22,7 @@
           <%= f.text_field :amount, class:"recipe-amount" %><span class="bold">人分</span>
         </div><!--form-main-->
         <div id ="ingredients">
-        <span class ="bold">　　　　材料　　　　　　　</span><span class="bold">分量</span>
+        <span class ="bold">　　　　　材料　　　　　　</span><span class="bold">分量</span>
           <%= f.fields_for :ingredients do |ingredient|%>
           <%= render 'ingredient_fields', :f => ingredient%>
           <% end %>

@@ -468,4 +468,50 @@ input[type="file"] {
   .recipe-index-method{
     display: none;
   }
+
+  .recipe-center{
+    width: 100%;
+  }
+
+  .recipe-top{
+    width: 100%;
+    padding: 0;
+  }
+
+  .recipe-left{
+    display: none;
+  }
+
+  .recipe-right{
+    display: none;
+  }
+
+  .recipe-container{
+    justify-content: center;
+  }
+
+  #ingredients{
+    width: 100%;
+  }
+
+  .nested-fields{
+    width: 100vw;
+  }
+
+  .name-form{
+    width: 160px;
+  }
+
+  .form-main{
+    margin: auto;
+    width: 80%;
+  }
+
+  .right-justified{
+    margin-right: 40px;
+  }
+
+  .form-switch{
+    padding-right: 2.5rem;
+  }
 }
