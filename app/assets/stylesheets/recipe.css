@@ -449,3 +449,23 @@ input[type="file"] {
     flex-direction: column;
   }
 }
+
+@media(max-width:500px){
+  .recipe-box-right{
+    padding-left: 30px;
+  }
+
+  .recipe-image{
+    height: 180px;
+    width: 180px;
+  }
+
+  .recipe-index-center{
+    width: 100vw;
+    padding: 0 10px;
+  }
+
+  .recipe-index-method{
+    display: none;
+  }
+}
