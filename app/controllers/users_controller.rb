@@ -47,16 +47,20 @@ class UsersController < ApplicationController
     @first_day = first_day
     wdays = ['(月)', '(火)', '(水)', '(木)', '(金)', '(土)', '(日)']
 
+    # 選択された週の献立を取得してmenusに格納する
     menus = Menu.includes([:recipe]).where(user_id: @user.id, date: @first_day..@first_day + 6)
 
     @week_days = []
     7.times do |x|
       today_menus = []
+      # menusに格納された献立の日付と一致するものをtoday_menusに格納する
       menus.each do |menu|
         today_menus.push(menu) if menu.date == @first_day + x
       end
       day = @first_day + x
+      # daysに日付と献立を格納する
       days = { wday: wdays[day.wday - 1], month: day.month, date: day.day, menu: today_menus }
+      # 格納された日付と献立をweek_daysに格納する
       @week_days.push(days)
     end
   end

@@ -28,7 +28,7 @@
 # 要件定義
 [こちらから](https://docs.google.com/spreadsheets/d/1KwSYimefFXwW4nBFSt5P2nJGMS_fz_1ft9eJh8wT1D0/edit#gid=982722306)
 # データベース設計
-![](https://i.gyazo.com/43b3d2b71e476674accd493319933586.png)
+![](https://i.gyazo.com/fcc3d0feb6cd5c76605a8a2eafb6d0bc.png)
 # テーブル設計
 ## users テーブル
 

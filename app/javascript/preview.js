@@ -1,3 +1,4 @@
+// 画像のプレビューを表示する
 document.addEventListener('DOMContentLoaded', function(){
   const postForm = document.getElementById('new_post');
   const previewList = document.getElementById('previews');

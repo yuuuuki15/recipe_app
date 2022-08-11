@@ -7,6 +7,7 @@ class MenusController < ApplicationController
     @menu = Menu.new(menu_params)
     if begin @menu.save
     rescue Exception => e
+      # 存在しない日付を指定した場合はエラーを表示する
       flash[:alert] = "予期せぬエラーが発生しました"
       STDERR.puts e.message
       return redirect_to recipe_path(@recipe)
