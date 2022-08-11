@@ -1,3 +1,4 @@
+// リストを削除する
 window.addEventListener('load', function() {
   const deleteList = document.querySelectorAll('.delete-list');
   for (let i = 0; i < deleteList.length; i++) {

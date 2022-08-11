@@ -1,3 +1,4 @@
+// 買い物リストを更新する
 window.addEventListener('load', function() {
   const updateList = document.querySelectorAll('#update');
   for (let i = 0; i < updateList.length; i++) {
