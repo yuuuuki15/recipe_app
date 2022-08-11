@@ -515,4 +515,8 @@ input[type="file"] {
   .form-switch{
     padding-right: 2.5rem;
   }
+
+  .recipe-title{
+    font-size: 20px;
+  }
 }
