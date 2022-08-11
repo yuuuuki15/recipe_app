@@ -51,6 +51,7 @@
         <%= f.label :public_id, "公開", class: "btn btn-primary", id: "public_id_label", style: "width:5rem" %><br \>
         <p>一般公開すると、他のユーザーがこのレシピを見ることができるようになります。</p>
 
+<!--公開と非公開を非同期で実装する-->
 <script>
 (function() {
   document.getElementById('recipe_public_id').addEventListener('click', function(e) {
